@@ -1,0 +1,197 @@
+
+
+.container{
+    height:100vh;
+}
+
+
+.item-container{
+    height:100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.item-left{
+    width: 65%; 
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: space-between;
+   
+}
+
+
+.item-left-movie{
+    width:300px;
+    height:400px;
+    position:relative; 
+    margin: auto; 
+    
+}
+
+.item-left-button{
+    display:flex; 
+    flex-direction: column;
+    width:100%;
+    margin: auto;
+    padding: 1em;
+   
+}
+
+.button1{
+   
+    border-radius: 15px;
+    width:50%;
+    margin: 10px;
+    background: black;
+    color: white;
+    margin: .5em auto;
+}
+
+.button1 a{
+    color: white;
+}
+
+.button2{
+    
+    border-radius: 15px;
+    width:50%;
+    margin: 10px;
+    background: black;
+    color: white;
+    margin: .5em auto;
+}
+
+.item-left-overview{
+    margin-top: 0.5em;
+    text-align:center;
+    max-width: 70%;
+    font: italic 600 1.25em "Titillium Web", sans-serif;
+    margin: auto;
+    color: white; 
+    padding: .5em;
+    width:275px;
+}
+
+
+
+.item-left-img{
+    height:100%;
+    width:100%;
+    position:absolute;
+    top:0;
+    left:0; 
+    bottom:0;
+    right:0;
+}
+
+.item-left-img img{
+    height:100%;
+    width:100%;
+   
+}
+
+
+.item-middle{
+    width:100%;
+    height:100%;
+    color: white; 
+    margin-left: 1em;
+    margin-right: 2.5em;
+    display:flex;
+    flex-direction: column;
+    justify-content:space-around;
+   
+    padding: 1em;
+    
+}
+
+.item-middle h1{
+    color: white; 
+    font-family: "Titillium Web", sans-serif;
+    font-size: 3.5em;
+    text-shadow: rgb(170, 170, 170) -1px -1px 1px, rgba(0, 0, 0, 0.5) 0px 4px 1px, rgba(0, 0, 0, 0.7) 4px 4px 5px, rgba(0, 0, 0, 0.4) 0px 0px 7px;
+    margin: 0px 0px 0.25em;
+    padding: 0px;
+}
+
+.item-middle-overview h2{
+    color: white; 
+    font-size: 1.25em;
+    margin: 0.1em 0px;
+}
+
+.item-middle-overview p{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.item-middle-genres{
+    display:flex; 
+    flex-direction: row;
+    font-size: 1.25em;
+    margin: 0.1em 0px;
+}
+
+
+.item-middle-genres p{
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.item-middle-addinfo{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.item-middle-addinfo h3{
+    color: white;
+    font-family: "Titillium Web", sans-serif;
+    text-shadow: rgb(170, 170, 170) -1px -1px 1px, rgba(0, 0, 0, 0.5) 0px 4px 1px, rgba(0, 0, 0, 0.7) 4px 4px 5px, rgba(0, 0, 0, 0.4) 0px 0px 7px;
+    font-size: 1em;
+    font-weight: 600;
+    text-align: center;
+    margin: 0.15em 0px;
+    padding: 0px;
+}
+
+.item-middle-addinfo p{
+    display: block;
+    margin-block-start: .5em;
+    margin-block-end: .5em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.item-right {
+    height:100%;
+    
+    display: flex;
+    align-items: flex-end;
+    flex-flow: column;
+    flex: 1 1 0%;
+    margin: auto;
+}
+
+
+.item-right-img{
+    height:100vh;
+    flex: 1 1 0%;
+    margin: 1em;
+    border-radius: 5px;
+    text-align: center;
+    margin: auto;
+    border-radius: 5px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+

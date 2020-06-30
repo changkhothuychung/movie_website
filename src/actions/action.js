@@ -1,0 +1,17 @@
+import {MOVIEADD, MOVIEDELETE} from './const'; 
+
+
+export const appMovieAdd = (item) => {
+    return {
+        type: MOVIEADD,
+        item
+    }
+}
+
+export const appMovieDelete = (id) => {
+
+    return {
+        type: MOVIEDELETE, 
+        id
+    }
+}
