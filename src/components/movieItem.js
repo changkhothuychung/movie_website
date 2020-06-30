@@ -17,7 +17,23 @@ const MovieItem = (props) => {
     let { id } = useParams();
 
     const [senditem, senditemState] = useState({
-        movies: {},
+        movies: 
+        {
+
+            videos: {
+                results: [
+                    {
+                        key: '',
+                    }
+                ]
+            },
+
+            genres: [],
+
+            images: {
+                backdrops: [],
+            }
+        },
     });
     const [backgroundImg, backgroundImgState] = useState();
 
