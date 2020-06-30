@@ -32,7 +32,10 @@ const MovieItem = (props) => {
 
             images: {
                 backdrops: [],
-            }
+            },
+            revenue: '',
+            budget:'',
+            release_date: '',
         },
     });
     const [backgroundImg, backgroundImgState] = useState();
@@ -101,7 +104,7 @@ const MovieItem = (props) => {
 
     return(
         <React.Fragment  className="container">
-                {senditem.movies == {} ? (
+                {!senditem.movies  ? (
                     <h1>hihih</h1>
                 ) : (
                     <div className="item-container">
