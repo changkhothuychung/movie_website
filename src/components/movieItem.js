@@ -3,7 +3,7 @@ import { Card } from 'antd';
 import {useQuery} from '@apollo/react-hooks';
 import { Button } from 'antd';
 import {useParams} from 'react-router-dom';
-import {getMovieById} from '../schema/schema';
+import {getMovieById,getAllMovie} from '../schema/schema';
 import { Spin } from 'antd';
 import './movieItem.css';
 import axios from 'axios';
@@ -42,6 +42,8 @@ const MovieItem = (props) => {
     const {data, loading, error} = useQuery(getMovieById, {
         variables: {id}
     })
+
+    const {data2, loading2, error2} = useQuery(getAllMovie);
 
     useEffect( () => {
        
