@@ -70,14 +70,14 @@ const PopularMovie = (props) => {
                                                 
                                             }}>
 
-                                        <div className="imgItem">
+                                        
                                     
                                         <img 
-                                                
+                                                className="imgItem"
                                                 alt="example" 
                                                 src={`https://image.tmdb.org/t/p/w300${item.poster_path}`} />
                                                 
-                                        </div>
+                                        
 
                                         <div className="movieItem-start">
                                                     <StarFilled className="starfilled"/>
