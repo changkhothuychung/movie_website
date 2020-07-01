@@ -12,21 +12,20 @@
     display: flex;
     flex-flow: row wrap;
     margin: 1vw;
-    
+  
+    justify-content: space-between;
 }
 
 
 
 .movieItem{
-   
+    
     position: relative;
     display: flex;
-    justify-content: space-around;
     color: white;
-    flex: 0 0 9%;
+    flex: 0 0 2%;
     margin: 1.55vw 1vw;
     border-radius: 10px 10px 0px 0px;
-   
    
 }
 
@@ -34,11 +33,12 @@
 
 
 .imgItem{
-   width:100%;
-   height:100%;
+   
 }
 
-img{
+.imgItem img{
+    width:100%;
+    height:100%;
     border-style: none;
 }
 
@@ -93,7 +93,7 @@ img{
 
  @media screen and (max-width: 1440px){
     .movieItem {
-        flex: 1 0 15%;
+        flex: 0 0 10%;
     }
 
 }
@@ -107,20 +107,22 @@ img{
 
 @media screen and (max-width: 3000px){
     .movieItem {
-        flex: 0 0 13%;
+        flex: 0 0 15%;
+        margin-right: 2.3em;
+        margin-left: 2.3em;
     }
-}
+} 
 
 @media screen and (max-width: 2000px){
     .movieList {
         -webkit-box-pack: center;
-        justify-content: flex-start;
+        justify-content: center;
         
     }
 }
 @media screen and (max-width: 3000px){
     .movieList {
         -webkit-box-pack: center;
-        justify-content: flex-start;
+        justify-content: center;
     }
 } 

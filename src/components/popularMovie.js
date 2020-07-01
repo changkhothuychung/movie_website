@@ -75,7 +75,7 @@ const PopularMovie = (props) => {
                                         <img 
                                                 
                                                 alt="example" 
-                                                src={`https://image.tmdb.org/t/p/w200${item.poster_path}`} />
+                                                src={`https://image.tmdb.org/t/p/w300${item.poster_path}`} />
                                                 
                                         </div>
 
