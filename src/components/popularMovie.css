@@ -103,7 +103,7 @@
 
 }
 
-@media only screen and (min-width: 400px){
+@media only screen and (min-width: 200px){
     .movieItem {
         margin: .5em .5em .5em .5em;
         padding: .2em;
