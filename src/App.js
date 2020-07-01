@@ -31,7 +31,13 @@ class App extends React.Component{
       super(props);
       this.state = {
         isNavBarHidden: false, 
-        pathlink: window.location.pathname
+        pathlink: window.location.pathname,
+        popularState: {
+          background: 'rgb(124, 165, 121)',
+        },
+        searchState: {}, 
+        favorState: {},
+
       }
   }
 
@@ -61,23 +67,60 @@ class App extends React.Component{
 
                   <nav className="navbar">
                   <ul>
-                    <li>
+                    <li  onClick={() => {
+                      this.setState({
+                        popularState:{
+                          background: 'rgb(124, 165, 121)'
+                        }, 
+                        searchState: {
+                          background: 'black', 
+                        },
+                        favorState:{
+                          background: 'black',
+                        }
+                      })
+                    }}>
                       <Link to="/popularmovie">
                         <p>Popular Movies</p>
-                        <div></div>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/search">
-                        <p>Search</p>
-                        <div></div>
+                        <div style={this.state.popularState}></div>
                       </Link>
                     </li>
 
-                    <li>
+                    <li onClick={() => {
+                          this.setState({
+                            popularState:{
+                              background: 'black'
+                            }, 
+                            searchState: {
+                              background: 'rgb(124, 165, 121)', 
+                            },
+                            favorState:{
+                              background: 'black',
+                            }
+                          })
+                    }}>
+                      <Link to="/search">
+                        <p>Search</p>
+                        <div style={this.state.searchState}></div>
+                      </Link>
+                    </li>
+
+                    <li onClick={() => {
+                          this.setState({
+                            popularState:{
+                              background: 'black'
+                            }, 
+                            searchState: {
+                              background: 'black', 
+                            },
+                            favorState:{
+                              background: 'rgb(124, 165, 121)',
+                            }
+                          })
+                    }}>
                       <Link to="/favor">
                         <p>Favorites</p>
-                        <div></div>
+                        <div style={this.state.favorState}></div>
                       </Link>
                     </li>
                   </ul>
