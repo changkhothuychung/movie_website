@@ -11,7 +11,7 @@ export const getAllMovie = gql`
             release_date
             poster_path
             backdrop_path
-
+            vote_average
         }
     }
 `;
@@ -41,6 +41,7 @@ export const getMovieById = gql`
             release_date
             poster_path
             backdrop_path
+            vote_average
         }
     }
 `

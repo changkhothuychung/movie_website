@@ -30,3 +30,25 @@
     
 }
 
+body {
+    background-color: rgb(44, 57, 73);
+    font-family: "Titillium Web";
+  }
+  
+  html {
+    width:100%;
+    line-height: 1.15;
+    text-size-adjust: 100%;
+  }
+  
+  div {
+    display: block;
+  }
+  
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  
+

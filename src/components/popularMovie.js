@@ -3,12 +3,13 @@ import { Card , Row, Col} from 'antd';
 import {useQuery} from '@apollo/react-hooks';
 import {getAllMovie} from '../schema/schema';
 import {
-    Link
+    Link,
+    Redirect
 } from "react-router-dom";
 import './popularMovie.css';
 import { prop } from 'ramda';
 import { Spin } from 'antd';
-
+import {LeftOutlined, ClockCircleFilled,StarFilled} from '@ant-design/icons';
 
 
 const PopularMovie = (props) => {
@@ -21,6 +22,13 @@ const PopularMovie = (props) => {
     })
     const [flag, flagState] = useState(false);
     
+    const handleOnClick = (item) => {
+        return <Link  to={{
+            pathname: `/popularmovie/${item.id}`,
+            
+        }}>
+        </Link>
+    }
 
     if(loading){
         return(
@@ -50,53 +58,46 @@ const PopularMovie = (props) => {
     return(
         <React.Fragment>
             <div className="movieContainer">
-                <Row className="movieList">
+                <div className="movieList">
                     {
                         data.movie.map((item, index) => (
-                                <Col span={6} >
+                                 
+                               <div className="movieItem">
+                                        <Link  
+                                            
+                                            to={{
+                                                pathname: `/popularmovie/${item.id}`,
+                                                
+                                            }}>
+
+                                        <div className="imgItem">
                                     
-                                   
-                                    <Link  
-                                    
-                                    to={{
-                                        pathname: `/popularmovie/${item.id}`,
-                                        
-                                    }}
-                                    
-                                    >
-                                        <div 
-                                            onMouseOver={() => {
-                                                    sizeChangeState({
-                                                        width: '250px', 
-                                                        height:'370px', 
-                                                        transition: '0.4s',
-                                                    });
-                                                    flagState(true);
-                                                 } 
-                                            }
-                                            onMouseOut ={() => {
-                                                    sizeChangeState({
-                                                        width: '240px', 
-                                                        height:'360px', 
-                                                        transition: '0.4s',
-                                                    });
-                                                    flagState(false);
-                                                }
-                                            }
-                                            className="movieItem" >
-                                            <div className="imgItem" >
-                                                <img 
-                                                     alt="example" 
-                                                     src={`https://image.tmdb.org/t/p/w300${item.poster_path}`} />
-                                            </div>
+                                        <img 
+                                                
+                                                alt="example" 
+                                                src={`https://image.tmdb.org/t/p/w200${item.poster_path}`} />
+                                                
                                         </div>
-                                    </Link>
+
+                                        <div className="movieItem-start">
+                                                    <StarFilled className="starfilled"/>
+                                                    {item.vote_average}
+                                                    
+                                        </div>
+                                        <div className="movieItem-time">
+                                            <ClockCircleFilled/>
+                                            <p>{item.runtime}</p>
+                                        </div>
+                                       
+                                        </Link>
+                                
+                                </div>
                                     
-                                </Col>
+                                
                             )  
                         )  
                     }
-                </Row>
+                </div>
 
             </div>
             
