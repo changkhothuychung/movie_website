@@ -100,6 +100,7 @@
     margin: .5em auto;
     padding-left: .7em;
     padding-right: .7em;
+    cursor:pointer;
 }
 
 .item-left-overview{
@@ -140,7 +141,6 @@
     margin-right: 2.5em;
     display:flex;
     flex-direction: column;
-    justify-content:space-around;
     padding: 1em;
     
 }
@@ -150,8 +150,14 @@
     font-family: "Titillium Web", sans-serif;
     font-size: 3.5em;
     text-shadow: rgb(170, 170, 170) -1px -1px 1px, rgba(0, 0, 0, 0.5) 0px 4px 1px, rgba(0, 0, 0, 0.7) 4px 4px 5px, rgba(0, 0, 0, 0.4) 0px 0px 7px;
-    margin: 0px 0px 0.25em;
     padding: 0px;
+}
+
+.item-middle-overview{
+    width:100%;
+    height:100%;
+    
+    margin-top:4em;
 }
 
 .item-middle-overview h2{
@@ -169,20 +175,58 @@
 }
 
 .item-middle-genres{
-    display:flex; 
-    flex-direction: row;
-    font-size: 1.25em;
-    margin: 0.1em 0px;
+    display:block;
+    
+}
+
+.item-middle-genres-title{
+   
+    margin:0;
 }
 
 
-.item-middle-genres p{
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em;
+.item-middle-genres-list{
+    display:flex;
+    flex-direction: row;
+    font-size: 1.5em;
+    font-weight: bold;
+    
+}
+
+.item-middle-genres-time-vote{
+    display:flex;
+    flex-direction: row;
+  
+}
+.item-middle-genres-time-vote div{
+   
+    font-size: 1.5em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-weight: bold;
 }
+.time{
+    margin-right: 1em;
+    display:flex;
+    flex-direction: row;
+}
+.star{
+    display:flex;
+    flex-direction: row;
+    margin-left: 2em;
+    padding-left: 1.7em;
+    color: gold;
+}
+
+.time p{
+    padding-right: .1em;
+}
+.star p{
+    padding-right: .1em;
+}
+
+
+
 
 .item-middle-addinfo{
     display:flex;
@@ -211,12 +255,14 @@
 
 .item-right {
     height:100%;
-    
     display: flex;
     align-items: flex-end;
+    justify-content: space-between;
     flex-flow: column;
     flex: 1 1 0%;
     margin: auto;
+    margin-right: 2em;
+    margin-bottom: .5em;
 }
 
 

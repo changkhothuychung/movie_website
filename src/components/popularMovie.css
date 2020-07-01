@@ -17,6 +17,11 @@
     justify-content: center;
 }
 
+.sizeChange{
+    width: 250px !important;
+    height:370px !important;
+}
+
 .movieItem{
     width:240px;
     height:360px;
@@ -26,7 +31,8 @@
     margin-top:1em;
     margin-bottom:1em;
     border-radius: 5px; 
-    transform:translateX(19%)
+    transform:translateX(19%);
+    
 }
 
 

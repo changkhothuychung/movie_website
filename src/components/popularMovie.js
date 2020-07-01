@@ -15,7 +15,11 @@ const PopularMovie = (props) => {
 
     const {data, loading, error} = useQuery(getAllMovie);
     const [senditem, senditemState] = useState(null);
-
+    const [sizeChange, sizeChangeState] = useState({
+        width:'240px',
+        height: '360px',
+    })
+    const [flag, flagState] = useState(false);
     
 
     if(loading){
@@ -48,15 +52,38 @@ const PopularMovie = (props) => {
             <div className="movieContainer">
                 <Row className="movieList">
                     {
-                        data.movie.map((item) => (
+                        data.movie.map((item, index) => (
                                 <Col span={6} >
+                                    
+                                   
                                     <Link  
                                     
                                     to={{
                                         pathname: `/popularmovie/${item.id}`,
                                         
-                                    }}>
-                                        <div className="movieItem" >
+                                    }}
+                                    
+                                    >
+                                        <div 
+                                            onMouseOver={() => {
+                                                    sizeChangeState({
+                                                        width: '250px', 
+                                                        height:'370px', 
+                                                        transition: '0.4s',
+                                                    });
+                                                    flagState(true);
+                                                 } 
+                                            }
+                                            onMouseOut ={() => {
+                                                    sizeChangeState({
+                                                        width: '240px', 
+                                                        height:'360px', 
+                                                        transition: '0.4s',
+                                                    });
+                                                    flagState(false);
+                                                }
+                                            }
+                                            className="movieItem" >
                                             <div className="imgItem" >
                                                 <img 
                                                      alt="example" 
@@ -64,6 +91,7 @@ const PopularMovie = (props) => {
                                             </div>
                                         </div>
                                     </Link>
+                                    
                                 </Col>
                             )  
                         )  

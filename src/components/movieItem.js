@@ -8,7 +8,7 @@ import { Spin } from 'antd';
 import './movieItem.css';
 import axios from 'axios';
 import {Link} from 'react-router-dom'
-import {LeftOutlined} from '@ant-design/icons';
+import {LeftOutlined, ClockCircleFilled,StarFilled} from '@ant-design/icons';
 
 const { Meta } = Card;
 
@@ -47,6 +47,13 @@ const MovieItem = (props) => {
     const {data, loading, error} = useQuery(getMovieById, {
         variables: {id}
     })
+
+    const convertToHours = (time) => {
+        let hours = Math.floor(time/60);
+        let min = time - hours*60;
+        let result = hours.toString() + "h" + " " + min.toString() + "m"; 
+        return result; 
+    }
 
     const {data2, loading2, error2} = useQuery(getAllMovie);
 
@@ -145,9 +152,11 @@ const MovieItem = (props) => {
     
     
                     <div className="item-middle">
-                        <h1>{senditem.movies.title}</h1>
+                        
     
                         <div className="item-middle-genres">
+                            <h1 className="item-middle-genres-title">{senditem.movies.title}</h1>
+                            <div className="item-middle-genres-list">
                             {senditem.movies.genres.map((item, index) => {
                                 if(index == senditem.movies.genres.length - 1){
                                     return(
@@ -156,10 +165,22 @@ const MovieItem = (props) => {
                                 }
                                 else{
                                     return(
-                                        <p>{item.name}<span>, </span></p>
+                                        <p>{item.name + ", " + " "} <span> </span></p>
                                    )
                                 }
                             })}
+                            </div>
+
+                            <div className="item-middle-genres-time-vote">
+                                    <div className="time">
+                                        <p><ClockCircleFilled /></p>
+                                        <p>{convertToHours(senditem.movies.runtime)}</p>
+                                    </div>
+                                    <div className="star">
+                                        <p><StarFilled /></p>
+                                        <p>{senditem.movies.vote_average}</p>
+                                    </div>
+                            </div>
                         </div>
     
                         <div className="item-middle-time-start">
