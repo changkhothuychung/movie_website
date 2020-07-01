@@ -88,6 +88,11 @@
         flex: 0 0 10%;
     }
 
+    .movieList {
+        -webkit-box-pack: center;
+        justify-content: center;
+    }
+
 }
 
 @media screen and (min-width: 500px){
