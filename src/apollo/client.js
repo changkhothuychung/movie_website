@@ -16,7 +16,7 @@ const client = new ApolloClient({
       if (networkError) console.log(`[Network error]: ${networkError}`);
     }),
     new HttpLink({
-      uri: 'https://localhost:9000/graphql',
+      uri: 'https://movieapi1810.herokuapp.com/graphql',
       credentials: 'same-origin'
     })
   ]),
