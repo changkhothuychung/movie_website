@@ -7,6 +7,7 @@ import {getMovieById,getAllMovie} from '../schema/schema';
 import { Spin } from 'antd';
 import './movieItem.css';
 import axios from 'axios';
+import {Link} from 'react-router-dom'
 
 const { Meta } = Card;
 
@@ -57,7 +58,7 @@ const MovieItem = (props) => {
                 
                 console.log("hello world")     
             
-                senditemState({movies: {...result.data}});
+                senditemState({movies: result.data});
                 console.log(senditem);
                 backgroundImgState({
                     background: `linear-gradient(rgba(0, 0, 0, 0.97) 10%,
@@ -103,11 +104,15 @@ const MovieItem = (props) => {
 
 
     return(
-        <React.Fragment  className="container">
+        <React.Fragment  >
                 {!senditem.movies  ? (
                     <h1>hihih</h1>
                 ) : (
-                    <div className="item-container">
+                    <div style={backgroundImg} className="container">
+                    <Link to="/popularmovie">
+                        <button  className="button-back">Back</button>
+                    </Link>
+                    <div style={backgroundImg} className="item-container">
 
                     <div className="item-left">
                         
@@ -201,6 +206,7 @@ const MovieItem = (props) => {
                             
                     </div>
     
+                    </div>
                     </div>
                 
                 )}

@@ -11,13 +11,14 @@ const { Meta } = Card;
 const { Search } = Input;
 
 const InputSearch = () => {
-    const [getMovieBasedOnName, {data, loading, error}] = useLazyQuery(getMovieByName);
+    let [getMovieBasedOnName, {data, loading, error}] = useLazyQuery(getMovieByName);
     const [keyword, keywordState] = useState('');
+    
     let [movieInput, movieInputState] = useState({
         width: '10%'
     })
 
-
+    
     useEffect(() => {
         getMovieBasedOnName({variables: {name: keyword}});
 
@@ -53,10 +54,16 @@ const InputSearch = () => {
     return(
         <React.Fragment>
 
-            <div className="input-container" >
+            <div onClick={() => {
+                    
+                    movieInputState({
+                        width: '10%'
+                    })} 
+                 }
+                className="input-container" >
 
                 
-
+                {console.log(data)}
                 <form>
 
                     <input  
@@ -67,9 +74,12 @@ const InputSearch = () => {
                             defaultValue={keyword}
                             placeholder="...Search"
                             style={movieInput}
-                            onClick={() => movieInputState({
-                                width: '20%'
-                            })}
+                            onClick={(event) => {
+                                event.stopPropagation();
+                                    movieInputState({
+                                    width: '20%'
+                                })}
+                            }
 
                             onMouseUp= {() => movieInputState({
                                 width: '10%'
@@ -83,16 +93,16 @@ const InputSearch = () => {
 
                 </form>
 
-                {
-                    console.log(data)
-                }
+                
 
 
                 {
                     data != null ? (
 
-                        data.search.map((item) => (
 
+                        data.search.map((item, index) => (
+                            
+                            
                             <Link to={`/popularmovie/${item.id}`}>
                                 <div className="movieItem" >
                                     <div className="imgItem" >
@@ -109,7 +119,6 @@ const InputSearch = () => {
                     ) : (
                         <h1>hihi</h1>
                     )
-                    
                 }
 
             </div>
