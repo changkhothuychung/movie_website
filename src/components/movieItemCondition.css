@@ -193,7 +193,7 @@
 
 
 
-@media only screen and (max-height: 350px){
+@media only screen and (max-height: 450px){
     .container-condition{
         height: 100%;
         width: 100%;
@@ -312,7 +312,7 @@
 
 }
 
-@media only screen and (max-height: 550px){
+@media only screen and (max-height: 700px){
     .container-condition{
         height: 100%;
         width: 100%;
