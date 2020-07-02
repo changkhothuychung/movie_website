@@ -228,7 +228,7 @@ const MovieItem = (props) => {
                 ) : ( 
                 <>
                     {isDesktop > 800 ? (
-                    <div style={backgroundImg} className="container">
+                        <div style={backgroundImg} className="container">
 
                     
                         <Link to="/popularmovie">
@@ -283,7 +283,7 @@ const MovieItem = (props) => {
                                         }
                                         else{
                                             return(
-                                                <p>{item.name + ", " + " "} <span> </span></p>
+                                                <p>{item.name }<span>, </span></p>
                                         )
                                         }
                                     })}

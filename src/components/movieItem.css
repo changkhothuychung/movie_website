@@ -147,7 +147,7 @@
 .item-middle h1{
     color: white; 
     font-family: "Titillium Web", sans-serif;
-    font-size: 3.5em;
+    font-size: 3em;
     text-shadow: rgb(170, 170, 170) -1px -1px 1px, rgba(0, 0, 0, 0.5) 0px 4px 1px, rgba(0, 0, 0, 0.7) 4px 4px 5px, rgba(0, 0, 0, 0.4) 0px 0px 7px;
     padding: 0px;
 }
@@ -155,7 +155,6 @@
 .item-middle-overview{
     width:100%;
     height:100%;
-    
     margin-top:4em;
 }
 
@@ -190,6 +189,9 @@
     font-size: 1.5em;
     font-weight: bold;
     
+}
+.item-middle-genres-list p{
+    padding-right: .3em;
 }
 
 .item-middle-genres-time-vote{
@@ -282,3 +284,24 @@
 
 
 
+@media screen and (max-width: 900px){
+    .item-middle h1{
+        color: white; 
+        font-family: "Titillium Web", sans-serif;
+        font-size: 1em;
+        text-shadow: rgb(170, 170, 170) -1px -1px 1px, rgba(0, 0, 0, 0.5) 0px 4px 1px, rgba(0, 0, 0, 0.7) 4px 4px 5px, rgba(0, 0, 0, 0.4) 0px 0px 7px;
+        padding: 0px;
+    }
+
+}
+
+@media only screen and (max-width: 1030px){
+    .item-middle h1{
+        color: white; 
+        font-family: "Titillium Web", sans-serif;
+        font-size: 2em;
+        text-shadow: rgb(170, 170, 170) -1px -1px 1px, rgba(0, 0, 0, 0.5) 0px 4px 1px, rgba(0, 0, 0, 0.7) 4px 4px 5px, rgba(0, 0, 0, 0.4) 0px 0px 7px;
+        padding: 0px;
+    }
+
+}
