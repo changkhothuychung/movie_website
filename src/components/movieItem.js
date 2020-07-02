@@ -20,7 +20,7 @@ const { Meta } = Card;
 const MovieItem = (props) => {
 
     let { id } = useParams();
-
+    console.log("id" + id); 
     const [senditem, senditemState] = useState({
         movies: 
         {
@@ -41,6 +41,7 @@ const MovieItem = (props) => {
             revenue: '',
             budget:'',
             release_date: '',
+            poster_path: '',
         },
     });
     const [backgroundImg, backgroundImgState] = useState();

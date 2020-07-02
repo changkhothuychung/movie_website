@@ -2,11 +2,13 @@ import React, {useState, useEffect} from 'react'
 import {useLazyQuery} from '@apollo/react-hooks'
 import {getMovieByName} from '../schema/schema'; 
 import { Input, Card } from 'antd';
-import {SearchOutlined} from '@ant-design/icons'
+import {SearchOutlined, StarFilled, ClockCircleFilled} from '@ant-design/icons'
 import './inputSearch.css';
 import './popularMovie.css';
+import axios from 'axios'
 import {Link} from 'react-router-dom';
 import {Spin} from 'antd';
+
 const { Meta } = Card;
 const { Search } = Input;
 
@@ -18,9 +20,26 @@ const InputSearch = () => {
         width: '10%'
     })
 
+    const [senditem, senditemState] = useState({
+        results: [],
+    });
+
     
     useEffect(() => {
+        let mounted = true; 
         getMovieBasedOnName({variables: {name: keyword}});
+        axios.get(`https://api.themoviedb.org/3/search/movie?query=${keyword}&api_key=cfe422613b250f702980a3bbf9e90716`)
+        .then(result => {
+            if(mounted){
+                senditemState(result.data);
+                console.log("senditem " + result.data);
+            }
+            else{
+                console.log('mounted');
+            }
+        })
+            
+       return () => mounted = false; 
 
     }, [keyword])
 
@@ -63,7 +82,7 @@ const InputSearch = () => {
                 className="input-container" >
 
                 
-                {console.log(data)}
+                
                 <form>
 
                     <input  
@@ -71,7 +90,6 @@ const InputSearch = () => {
                             className="input-search" 
                             type="text"    
                             name="inputsearch"
-                            defaultValue={keyword}
                             placeholder="...Search"
                             style={movieInput}
                             onClick={(event) => {
@@ -94,39 +112,45 @@ const InputSearch = () => {
                 </form>
 
                 
+                <div className="movieList">
 
-
-                {
-                    data != null ? (
-
-
-                        data.search.map((item, index) => (
-                            
-                            
-                            <Link to={`/popularmovie/${item.id}`}>
-                                <div className="movieItem" >
-                                    <div className="imgItem" >
+                    {
+                        senditem != null ? (
+                            senditem.results.map((item, index) => ( 
+                                <div className="movieItem">
+                                        
+                                        
+                                        
                                         <img 
+                                                className="imgItem"
                                                 alt="example" 
                                                 src={`https://image.tmdb.org/t/p/w300${item.poster_path}`} />
-                                    </div>
+                                                
+                                       
+
+                                        <div className="movieItem-start">
+                                            <StarFilled className="starfilled"/>
+                                            {item.vote_average}
+                                                    
+                                        </div>
+                                        <div className="movieItem-time">
+                                            <ClockCircleFilled/>
+                                            <p>{item.runtime}</p>
+                                        </div>
+                                       
+                                       
+                                
                                 </div>
-                            </Link>
+                            )
+                            )
+                        ) : (
+                            <h1>hihi</h1>
                         )
-        
-                        )
-
-                    ) : (
-                        <h1>hihi</h1>
-                    )
-                }
-
+                    }
+                </div>
             </div>
-
         </React.Fragment>
     )
-
-
 }
 
 

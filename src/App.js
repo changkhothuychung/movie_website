@@ -40,7 +40,6 @@ class App extends React.Component{
 
       }
   }
-
   onClickButton = () => {
     this.setState({
       pathlink: window.location.pathname,

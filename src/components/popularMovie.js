@@ -52,9 +52,7 @@ const PopularMovie = (props) => {
 
 
 
-    console.log("get data here");
-    console.log(data.movie[0]); 
-
+   
     return(
         <React.Fragment>
             <div className="movieContainer">

@@ -16,7 +16,6 @@
 .item-container-condition{
     padding: 0px 2rem;
     flex-flow: row wrap;
-    
 }
 
 .button-condition{
@@ -155,9 +154,11 @@
     display: flex;
     justify-content: space-around;
     margin: 1.25rem 0px;
+    
 }
 .button1-condition{
     color: white;
+    height:100%;
     font-size: 1.1rem;
     margin: 0.5rem;
     padding: 0.3rem 0.5rem;
@@ -177,6 +178,7 @@
 .button2-condition{
     color: white;
     font-size: 1.1rem;
+    height:100%;
     margin: 0.5rem;
     padding: 0.3rem 0.5rem;
     border-width: initial;
@@ -189,6 +191,228 @@
     background: rgb(39, 105, 180);
 }
 
+
+
+@media only screen and (max-height: 350px){
+    .container-condition{
+        background: linear-gradient(rgba(0, 0, 0, 0), 
+        rgba(0, 0, 0, 0) 20%, 
+        rgba(44, 57, 73, 0.8) 30%, 
+        rgb(44, 57, 73) 40%, 
+        rgba(44, 57, 73, 0.99) 50%) 0% 0% ;
+    }
+    .revenue-budget-condition{
+        display:none;
+    }
+    .item-footer-condition{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width:100%;
+        padding:0;
+
+    }
+    .item-overview-condition{
+        font-size: .5rem;
+        width: 100%;
+        margin: 0;
+        line-height: 1em;
+    }
+
+    .item-tagline-condition{
+        display:none;
+    }
+
+    .button-condition{
+        position: fixed;
+        top:0;
+        left:0;
+        color: white;
+        font-size: 1.2rem;
+        padding: 0.1em;
+        outline: none;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        background: rgb(39, 105, 180);
+        cursor:pointer;
+        transform:translate(-50%, -50%);
+    }
+    .item-title-condition{
+        font-family: "Titillium Web", sans-serif;
+        font-size: 1rem;
+        color: white;
+        text-shadow: rgb(170, 170, 170) -1px -1px 1px, rgba(0, 0, 0, 0.5) 0px 4px 1px, rgba(0, 0, 0, 0.7) 4px 4px 5px, rgba(0, 0, 0, 0.4) 0px 0px 7px;
+        width: 100%;
+        margin: 0px 0px 0.5rem;
+    }
+
+    .button1-condition{
+        color: white;
+        font-size: .6rem;
+        margin: 0.5rem;
+        padding: 0.2rem 0.3rem;
+       
+        outline: none;
+        border-radius: 0.8em;
+        text-decoration: none;
+        background: rgb(39, 105, 180); 
+    }
+    .button1-condition a{
+        color: white;
+    }
+    
+    .button2-condition{
+        color: white;
+        font-size: .6rem;
+        margin: 0.5rem;
+        padding: 0.2rem 0.3rem;
+       
+        outline: none;
+        border-radius: 0.8em;
+        text-decoration: none;
+        background: rgb(39, 105, 180);
+    }
+
+
+
+.item-genres-condition div{
+    cursor: default;
+    height: 32px;
+    display: inline-flex;
+    outline: 0;
+    padding: 0;
+    font-size: 0.6rem;
+    
+    align-items: center;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    margin: .3em;
+    border-radius: 50%;
+    vertical-align: middle;
+    justify-content: center;
+}
+
+.item-genres-condition p{
+    color: #fff;
+    background-color: #3f51b5;
+    padding: .4em;
+    border-radius: 10px;
+}
+
+    
+
+}
+
+@media only screen and (max-height: 550px){
+    .container-condition{
+        background: linear-gradient(rgba(0, 0, 0, 0), 
+        rgba(0, 0, 0, 0) 20%, 
+        rgba(44, 57, 73, 0.8) 30%, 
+        rgb(44, 57, 73) 40%, 
+        rgba(44, 57, 73, 0.99) 50%) 0% 0% ;
+    }
+    .revenue-budget-condition{
+        display:none;
+    }
+    .item-footer-condition{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width:100%;
+        padding:0;
+
+    }
+    .item-overview-condition{
+        font-size: .8rem;
+        width: 100%;
+        margin: 0;
+        line-height: 1em;
+    }
+
+    .button-condition{
+        position: fixed;
+        top:0;
+        left:0;
+        color: white;
+        font-size: 1.2rem;
+        padding: 0.1em;
+        outline: none;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        background: rgb(39, 105, 180);
+        cursor:pointer;
+        transform:translate(-50%, -50%);
+    }
+    .item-title-condition{
+        font-family: "Titillium Web", sans-serif;
+        font-size: 1.5rem;
+        color: white;
+        text-shadow: rgb(170, 170, 170) -1px -1px 1px, rgba(0, 0, 0, 0.5) 0px 4px 1px, rgba(0, 0, 0, 0.7) 4px 4px 5px, rgba(0, 0, 0, 0.4) 0px 0px 7px;
+        width: 100%;
+        margin: 0px 0px 0.5rem;
+    }
+
+    .item-tagline-condition{
+        width: 100%;
+        font: italic 600 .8rem "Titillium Web", sans-serif;
+        text-shadow: rgb(170, 170, 170) -1px -1px 1px, rgba(0, 0, 0, 0.5) 0px 4px 1px, rgba(0, 0, 0, 0.7) 4px 4px 5px, rgba(0, 0, 0, 0.4) 0px 0px 7px;
+        margin: 0px 0px 1rem;
+        color: white;
+    }
+
+    .button1-condition{
+        color: white;
+        font-size: .8rem;
+        margin: 0.5rem;
+        padding: 0.2rem 0.3rem;
+       
+        outline: none;
+        border-radius: 0.8em;
+        text-decoration: none;
+        background: rgb(39, 105, 180); 
+    }
+    .button1-condition a{
+        color: white;
+    }
+    
+    .button2-condition{
+        color: white;
+        font-size: .8rem;
+        margin: 0.5rem;
+        padding: 0.2rem 0.3rem;
+       
+        outline: none;
+        border-radius: 0.8em;
+        text-decoration: none;
+        background: rgb(39, 105, 180);
+    }
+
+    .item-genres-condition div{
+        cursor: default;
+        height: 32px;
+        display: inline-flex;
+        outline: 0;
+        padding: 0;
+        font-size: 0.6rem;
+        
+        align-items: center;
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+        margin: .3em;
+        border-radius: 50%;
+        vertical-align: middle;
+        justify-content: center;
+    }
+    
+    .item-genres-condition p{
+        color: #fff;
+        background-color: #3f51b5;
+        padding: .4em;
+        border-radius: 10px;
+    }
+    
+    
+
+}
+
 @media only screen and (max-width: 600px){
     .container-condition{
         background: linear-gradient(rgba(0, 0, 0, 0), 
@@ -196,9 +420,6 @@
         rgba(44, 57, 73, 0.8) 30%, 
         rgb(44, 57, 73) 40%, 
         rgba(44, 57, 73, 0.99) 50%) 0% 0% ;
-        border: 1px solid red;
-
     }
-
 }
 
