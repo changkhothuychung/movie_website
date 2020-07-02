@@ -195,11 +195,21 @@
 
 @media only screen and (max-height: 350px){
     .container-condition{
+        height: 100%;
+        width: 100%;
+        font-size: 24px;
+        color: white;
+        display: flex;
+        -webkit-box-pack: end;
+        justify-content: flex-end;
+        flex-direction: column;
+        position:fixed;
+        top:0;
         background: linear-gradient(rgba(0, 0, 0, 0), 
-        rgba(0, 0, 0, 0) 20%, 
-        rgba(44, 57, 73, 0.8) 30%, 
-        rgb(44, 57, 73) 40%, 
-        rgba(44, 57, 73, 0.99) 50%) 0% 0% ;
+        rgba(0, 0, 0, 0) 5%, 
+        rgba(44, 57, 73, 0.8) 10%, 
+        rgb(44, 57, 73) 15%, 
+        rgba(44, 57, 73, 0.99) 20%) 0% 0% ;
     }
     .revenue-budget-condition{
         display:none;
@@ -304,12 +314,23 @@
 
 @media only screen and (max-height: 550px){
     .container-condition{
+        height: 100%;
+        width: 100%;
+        font-size: 24px;
+        color: white;
+        display: flex;
+        -webkit-box-pack: end;
+        justify-content: flex-end;
+        flex-direction: column;
+        position:fixed;
+        top:0;
         background: linear-gradient(rgba(0, 0, 0, 0), 
-        rgba(0, 0, 0, 0) 20%, 
-        rgba(44, 57, 73, 0.8) 30%, 
-        rgb(44, 57, 73) 40%, 
-        rgba(44, 57, 73, 0.99) 50%) 0% 0% ;
+        rgba(0, 0, 0, 0) 10%, 
+        rgba(44, 57, 73, 0.8) 15%, 
+        rgb(44, 57, 73) 20%, 
+        rgba(44, 57, 73, 0.99) 25%) 0% 0% ;
     }
+    
     .revenue-budget-condition{
         display:none;
     }
@@ -363,8 +384,8 @@
         color: white;
         font-size: .8rem;
         margin: 0.5rem;
-        padding: 0.2rem 0.3rem;
-       
+        padding-left:.1em;
+        padding-right:.1em;
         outline: none;
         border-radius: 0.8em;
         text-decoration: none;
@@ -375,11 +396,12 @@
     }
     
     .button2-condition{
+        
         color: white;
         font-size: .8rem;
         margin: 0.5rem;
-        padding: 0.2rem 0.3rem;
-       
+        padding-left:.1em;
+        padding-right:.1em;
         outline: none;
         border-radius: 0.8em;
         text-decoration: none;
@@ -418,8 +440,8 @@
         background: linear-gradient(rgba(0, 0, 0, 0), 
         rgba(0, 0, 0, 0) 20%, 
         rgba(44, 57, 73, 0.8) 30%, 
-        rgb(44, 57, 73) 40%, 
-        rgba(44, 57, 73, 0.99) 50%) 0% 0% ;
+        rgb(44, 57, 73) 35%, 
+        rgba(44, 57, 73, 0.99) 40%) 0% 0% ;
     }
 }
 
