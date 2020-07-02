@@ -108,15 +108,16 @@ const MovieItem = (props) => {
                     console.log(senditem);
                     backgroundImgState({
                         background: `linear-gradient(rgba(0, 0, 0, 0), 
-                        rgba(0, 0, 0, 0) 50%, 
-                        rgba(44, 57, 73, 0.8) 60%, 
-                        rgb(44, 57, 73) 70%, 
-                        rgba(44, 57, 73, 0.99) 100%) 0% 0% / cover, 
-                        url(https://image.tmdb.org/t/p/w780${result.data.backdrop_path})
-                        center
+                        rgba(0, 0, 0, 0) 40%, 
+                        rgba(44, 57, 73, 0.8) 50%, 
+                        rgb(44, 57, 73) 60%, 
+                        rgba(44, 57, 73, 0.99) 70%) 0% 0% / cover, 
+                        url(https://image.tmdb.org/t/p/w300${result.data.backdrop_path})
+                        top
                         center
                         no-repeat`,
-                        backgroundSize: '100% 100%',
+                        backgroundSize: '100% auto'
+                        
                                         
                     })
                 }).catch(err => {
@@ -135,7 +136,7 @@ const MovieItem = (props) => {
                 <div style={backgroundImg} className="container-condition">
                     <div>
                         <Link to="/popularmovie">   
-                            <button className="button-condition">Back</button>
+                            <button className="button-condition"><LeftOutlined /></button>
                         </Link>
                     </div>
                     <div className="item-container-condition">
@@ -225,9 +226,9 @@ const MovieItem = (props) => {
                 {!senditem.movies  ?  (
                     <h1>hihih</h1>
                 ) : ( 
-                <div>
+                <>
                     {isDesktop > 800 ? (
-                        <div style={backgroundImg} className="container">
+                    <div style={backgroundImg} className="container">
 
                     
                         <Link to="/popularmovie">
@@ -354,7 +355,7 @@ const MovieItem = (props) => {
                         <MovieItemConditionally />
                     )}
                 
-                </div>
+                </>
                 )}
            
                 

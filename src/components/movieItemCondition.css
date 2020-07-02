@@ -9,7 +9,6 @@
     -webkit-box-pack: end;
     justify-content: flex-end;
     flex-direction: column;
-   
     position:fixed;
     top:0;
 }
@@ -17,7 +16,6 @@
 .item-container-condition{
     padding: 0px 2rem;
     flex-flow: row wrap;
-    
     
 }
 
@@ -123,13 +121,15 @@
 
 .item-footer-condition{
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .item-overview-condition{
     font-size: 1rem;
     width: 60%;
     margin: 1.25rem 0px;
-    line-height: 1em
+    line-height: 1em;
     
     
 }
@@ -141,6 +141,8 @@
     width: 40%;
     flex-flow: column;
     margin: 1.25rem 0px;
+    line-height: 1em;
+    
 }
 
 .revenue-budget-condition p{
