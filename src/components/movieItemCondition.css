@@ -1,0 +1,189 @@
+
+
+.container-condition{
+    height: 100vh;
+    width: 100%;
+    font-size: 24px;
+    color: white;
+    display: flex;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    flex-direction: column;
+   
+    position:fixed;
+    top:0;
+}
+
+.item-container-condition{
+    padding: 0px 2rem;
+    flex-flow: row wrap;
+    
+    
+}
+
+.button-condition{
+    position: fixed;
+    top:0px;
+    left:0px;
+    color: white;
+    font-size: 1.5rem;
+    justify-self: center;
+    align-self: center;
+    margin: 1.5rem;
+    padding: 0.1em;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    outline: none;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    background: rgb(39, 105, 180);
+    cursor:pointer;
+}
+
+
+.item-title-condition{
+    font-family: "Titillium Web", sans-serif;
+    font-size: 2rem;
+    color: white;
+    text-shadow: rgb(170, 170, 170) -1px -1px 1px, rgba(0, 0, 0, 0.5) 0px 4px 1px, rgba(0, 0, 0, 0.7) 4px 4px 5px, rgba(0, 0, 0, 0.4) 0px 0px 7px;
+    width: 100%;
+    margin: 0px 0px 0.5rem;
+}
+
+.item-tagline-condition{
+    width: 100%;
+    font: italic 600 1rem "Titillium Web", sans-serif;
+    margin: 0px 0px 1rem;
+    color: white;
+    
+}
+
+.item-genres-condition{
+
+    display: inline-block; 
+    justify-content: space-around;
+}
+
+.item-genres-condition div{
+    cursor: default;
+    height: 32px;
+    display: inline-flex;
+    outline: 0;
+    padding: 0;
+    font-size: 0.8125rem;
+    align-items: center;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    margin: .3em;
+    border-radius: 50%;
+    vertical-align: middle;
+    justify-content: center;
+}
+
+.item-genres-condition p{
+    color: #fff;
+    background-color: #3f51b5;
+    padding: .3em;
+    border-radius: 10px;
+}
+
+.item-genres-generator{
+    border-radius: 10px;
+}
+
+.item-time-star-condition{
+    display: flex;
+    font-size: 1.25rem;
+    margin: 0.5rem 0px;
+    
+}
+
+.time-condition {
+    align-self: center;
+    margin: 0px;
+    padding: 0px;
+    border-radius: 10%;
+    color: white; 
+    display:flex;
+    flex-direction: row;
+    padding-right: .2em;
+}
+
+.star-condition{
+    align-self: center;
+    margin: 0px;
+    padding: 0px;
+    border-radius: 10%;
+    color: gold;
+    display:flex;
+    flex-direction: row;
+    padding-left: .2em;
+}
+
+.item-footer-condition{
+    display: flex;
+}
+
+.item-overview-condition{
+    font-size: 1rem;
+    width: 60%;
+    margin: 1.25rem 0px;
+    line-height: 1em
+    
+    
+}
+
+.revenue-budget-condition{
+    display: flex;
+    font-size: 1rem;
+    align-items: flex-end;
+    width: 40%;
+    flex-flow: column;
+    margin: 1.25rem 0px;
+}
+
+.revenue-budget-condition p{
+    display: block;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.button-option-condition{
+    display: flex;
+    justify-content: space-around;
+    margin: 1.25rem 0px;
+}
+.button1-condition{
+    color: white;
+    font-size: 1.1rem;
+    margin: 0.5rem;
+    padding: 0.3rem 0.5rem;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    outline: none;
+    border-radius: 0.8em;
+    text-decoration: none;
+    background: rgb(39, 105, 180); 
+}
+.button1-condition a{
+    color: white;
+}
+
+.button2-condition{
+    color: white;
+    font-size: 1.1rem;
+    margin: 0.5rem;
+    padding: 0.3rem 0.5rem;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    outline: none;
+    border-radius: 0.8em;
+    text-decoration: none;
+    background: rgb(39, 105, 180);
+}
+
