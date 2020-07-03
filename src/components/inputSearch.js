@@ -13,7 +13,7 @@ const { Search } = Input;
 
 const InputSearch = () => {
     let [getMovieBasedOnName, {data, loading, error}] = useLazyQuery(getMovieSearchByName);
-    const [keyword, keywordState] = useState('batman');
+    const [keyword, keywordState] = useState(null);
     
     let [movieInput, movieInputState] = useState({
         width: '10%'
@@ -111,7 +111,7 @@ const InputSearch = () => {
 
                     <button className="input-submit"
                            onClick={() => keywordState(document.querySelector('.input-search').value)} 
-                           type="button" ><SearchOutlined /> </button>
+                           type="submit" ><SearchOutlined /> </button>
 
                 </form>
 
@@ -123,15 +123,15 @@ const InputSearch = () => {
                             }>
 
                     {
-                        data ? (
+                        keyword != null ? (
                             data.movieItem.map((item, index) => ( 
                                 <div className="movieItem">
-                                        <Link  
-                                            
+                                       <Link
                                             to={{
                                                 pathname: `/popularmovie/${item.id}`,
                                                 
-                                            }}>
+                                            }}
+                                       >
 
                                         <img 
                                                 className="imgItem"
@@ -147,13 +147,15 @@ const InputSearch = () => {
                                             <ClockCircleFilled/>
                                             <p>{item.runtime}</p>
                                         </div>
-                                        </Link>
+
+                                    </Link>
+                                        
                                 </div>
 
                             )
                             )
                         ) : (
-                            <h1>hihi</h1>
+                            <h1>No results yet</h1>
                         )
                     } 
                 </div> 

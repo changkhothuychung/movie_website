@@ -70,7 +70,9 @@ const MovieItem = (props) => {
     
 
     useEffect( () => {
-       
+
+    let mounted = true; 
+    if(mounted){
         window.addEventListener("resize", updateMedia);
         let data = null;
         console.log(isDesktop)
@@ -130,7 +132,8 @@ const MovieItem = (props) => {
             }
         }
         data();
-        
+    }
+        return () => mounted = false; 
     }, [isDesktop]);
 
 
@@ -138,7 +141,6 @@ const MovieItem = (props) => {
         return(
             <React.Fragment>
                
-
                 <div style={backgroundImg} className="container-condition">
                     <div>
                         <Link to="/popularmovie">   
@@ -229,8 +231,8 @@ const MovieItem = (props) => {
     return(
         <React.Fragment  >
                 {console.log("data2")}
-                {console.log(data2)}
-                {!senditem.movies  ?  (
+               
+                {!senditem  ?  (
                     <h1>hihih</h1>
                 ) : ( 
                 <>
@@ -253,7 +255,7 @@ const MovieItem = (props) => {
                                     <div className="item-left-img" >
                                         <img 
                                             alt="example" 
-                                            src={`https://image.tmdb.org/t/p/w300${data.searchById[0].poster_path}`} />
+                                            src={`https://image.tmdb.org/t/p/w300${senditem.movies.poster_path}`} />
                                     </div>
                                 </div>
                                 
