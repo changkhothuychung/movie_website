@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import {useLazyQuery} from '@apollo/react-hooks'
 import {getMovieByName} from '../schema/schema'; 
 import { Input, Card } from 'antd';
@@ -33,24 +33,31 @@ const InputSearch = () => {
     
     useEffect(() => {
         window.addEventListener("resize", updateMedia);
-        let mounted = true; 
+        const abortController = new AbortController(); 
+
         getMovieBasedOnName({variables: {name: keyword}});
-        axios.get(`https://api.themoviedb.org/3/search/movie?query=${keyword}&api_key=cfe422613b250f702980a3bbf9e90716`)
-        .then(result => {
-            if(mounted){
-                senditemState(result.data);
-                console.log(result.data);
-            }
-            else{
-                console.log('mounted');
-            }
-        }).catch(err => {
-            console.log(err);
-        })
+        let mounted = true; 
+        const data = async () => {     
+            
+            await axios(`https://api.themoviedb.org/3/search/movie?query=${keyword}&api_key=cfe422613b250f702980a3bbf9e90716`)
+            .then(result => {
+                if(mounted){
+                    senditemState(result.data);
+                    console.log("senditem");
+                    console.log(senditem);
+                }
+                else{
+                    console.log('mounted');
+                }
+            }).catch(err => {
+                console.log(err);
+            })
+        }
+        data();
+       
 
         
-            
-       return () => mounted = false; 
+       
 
     }, [keyword, isDesktop])
 
@@ -121,7 +128,6 @@ const InputSearch = () => {
                                     })
                                 }
                                    
-                            
                                 }
                             }
 
@@ -135,12 +141,12 @@ const InputSearch = () => {
 
                     <button className="input-submit"
                            onClick={() => keywordState(document.querySelector('.input-search').value)} 
-                           type="submit" ><SearchOutlined /> </button>
+                           type="button" ><SearchOutlined /> </button>
 
                 </form>
 
                 
-                <div className="movieList" onClick={() => {
+                 <div className="movieList" onClick={() => {
                                     movieInputState({
                                     width: '10%'
                                 })}
@@ -151,7 +157,7 @@ const InputSearch = () => {
                             senditem.results.map((item, index) => ( 
                                 <div className="movieItem">
                                         
-                                        
+                                    
                                         
                                         <img 
                                                 className="imgItem"
@@ -169,7 +175,7 @@ const InputSearch = () => {
                                             <ClockCircleFilled/>
                                             <p>{item.runtime}</p>
                                         </div>
-                                       
+                                   
                                        
                                 
                                 </div>
@@ -179,7 +185,7 @@ const InputSearch = () => {
                             <h1>hihi</h1>
                         )
                     }
-                </div>
+                </div> 
             </div>
         </React.Fragment>
     )

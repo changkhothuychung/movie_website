@@ -20,7 +20,7 @@ const { Meta } = Card;
 const MovieItem = (props) => {
 
     let { id } = useParams();
-    console.log("id" + id); 
+    console.log("id " + id); 
     const [senditem, senditemState] = useState({
         movies: 
         {
