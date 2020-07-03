@@ -129,7 +129,6 @@ const InputSearch = () => {
                                        <Link
                                             to={{
                                                 pathname: `/popularmovie/${item.id}`,
-                                                
                                             }}
                                        >
 
@@ -155,7 +154,7 @@ const InputSearch = () => {
                             )
                             )
                         ) : (
-                            <h1>No results yet</h1>
+                            <h1 className="search-result">No results yet</h1>
                         )
                     } 
                 </div> 

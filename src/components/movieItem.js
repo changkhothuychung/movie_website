@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import { Card } from 'antd';
 import {useQuery} from '@apollo/react-hooks';
 import { Button } from 'antd';
-import {useParams} from 'react-router-dom';
+import {useParams, useHistory} from 'react-router-dom';
 import {getMovieById,getAllMovie, getMovieSearchName} from '../schema/schema';
 import { Spin } from 'antd';
 import './movieItem.css';
@@ -18,6 +18,8 @@ const { Meta } = Card;
 
 
 const MovieItem = (props) => {
+
+    const history = useHistory();
 
     let { id } = useParams();
     console.log("id " + id); 
@@ -240,11 +242,11 @@ const MovieItem = (props) => {
                         <div style={backgroundImg} className="container">
 
                     
-                        <Link to="/popularmovie">
+                        <div>
                             
-                            <button  className="button-back">Back</button>
-                        </Link>
-                   
+                        <button onClick={() => history.goBack()}  className="button-back">Back</button>
+                        
+                        </div>
 
                          <div  className="item-container">
 

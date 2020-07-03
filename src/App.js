@@ -104,6 +104,7 @@ class App extends React.Component{
                       </Link>
                     </li>
 
+
                     <li onClick={() => {
                           this.setState({
                             popularState:{
@@ -147,6 +148,7 @@ class App extends React.Component{
                         <InputSearch onClick={() => this.onClickButton()}/>
                       
                     </Route>
+                   
                     <Route  path="/favor" >
                         <Favor onClick={() => this.onClickButton()} work={this.props.listWork}/>
                     </Route>
