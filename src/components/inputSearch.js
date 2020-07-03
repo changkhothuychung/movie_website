@@ -24,24 +24,35 @@ const InputSearch = () => {
         results: [],
     });
 
+    const [isDesktop, setDesktop] = useState(window.innerWidth);
+
+    const updateMedia = () => {
+        setDesktop(window.innerWidth);
+    }
+
     
     useEffect(() => {
+        window.addEventListener("resize", updateMedia);
         let mounted = true; 
         getMovieBasedOnName({variables: {name: keyword}});
         axios.get(`https://api.themoviedb.org/3/search/movie?query=${keyword}&api_key=cfe422613b250f702980a3bbf9e90716`)
         .then(result => {
             if(mounted){
                 senditemState(result.data);
-                console.log("senditem " + result.data);
+                console.log(result.data);
             }
             else{
                 console.log('mounted');
             }
+        }).catch(err => {
+            console.log(err);
         })
+
+        
             
        return () => mounted = false; 
 
-    }, [keyword])
+    }, [keyword, isDesktop])
 
 
     if(loading){
@@ -72,13 +83,15 @@ const InputSearch = () => {
 
     return(
         <React.Fragment>
-
+            {console.log("returning")}
+            {console.log(senditem)}
+            {console.log(isDesktop)}
             <div onClick={() => {
                     
                     movieInputState({
                         width: '10%'
                     })} 
-                 }
+                }
                 className="input-container" >
 
                 
@@ -91,17 +104,32 @@ const InputSearch = () => {
                             type="text"    
                             name="inputsearch"
                             placeholder="...Search"
-                            style={movieInput}
+                            style={ isDesktop < 700 ? {width: '25%'} : movieInput}
                             onClick={(event) => {
                                 event.stopPropagation();
+                                
+                                if(isDesktop < 700){
+                                    console.log("did update")
                                     movieInputState({
-                                    width: '20%'
-                                })}
+                                        width: '50%'
+                                    })
+                                }
+                                else{
+                                    console.log("did update1")
+                                    movieInputState({
+                                        width: '20%'
+                                    })
+                                }
+                                   
+                            
+                                }
                             }
 
                             onMouseUp= {() => movieInputState({
                                 width: '10%'
                             })}
+
+
                             
                     />
 
@@ -112,7 +140,11 @@ const InputSearch = () => {
                 </form>
 
                 
-                <div className="movieList">
+                <div className="movieList" onClick={() => {
+                                    movieInputState({
+                                    width: '10%'
+                                })}
+                            }>
 
                     {
                         senditem != null ? (

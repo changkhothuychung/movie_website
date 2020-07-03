@@ -1,7 +1,7 @@
 .input-container{
     width:100%;
     height:100%;
-   
+    
 }
 
 .input-search{
@@ -14,6 +14,7 @@
     color: white; 
     transition-duration: 0.5s;
     z-index:2;
+   
 }
 
 .input-submit{
@@ -28,3 +29,4 @@
 .input-result-container{
 
 }
+
