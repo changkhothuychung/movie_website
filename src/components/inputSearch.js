@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react'
 import {useLazyQuery} from '@apollo/react-hooks'
-import {getMovieByName} from '../schema/schema'; 
+import {getMovieByName, getMovieSearchByName} from '../schema/schema'; 
 import { Input, Card } from 'antd';
 import {SearchOutlined, StarFilled, ClockCircleFilled} from '@ant-design/icons'
 import './inputSearch.css';
@@ -8,13 +8,12 @@ import './popularMovie.css';
 import axios from 'axios'
 import {Link} from 'react-router-dom';
 import {Spin} from 'antd';
-
 const { Meta } = Card;
 const { Search } = Input;
 
 const InputSearch = () => {
-    let [getMovieBasedOnName, {data, loading, error}] = useLazyQuery(getMovieByName);
-    const [keyword, keywordState] = useState('');
+    let [getMovieBasedOnName, {data, loading, error}] = useLazyQuery(getMovieSearchByName);
+    const [keyword, keywordState] = useState('batman');
     
     let [movieInput, movieInputState] = useState({
         width: '10%'
@@ -30,35 +29,15 @@ const InputSearch = () => {
         setDesktop(window.innerWidth);
     }
 
-    
     useEffect(() => {
-        window.addEventListener("resize", updateMedia);
-        const abortController = new AbortController(); 
-
-        getMovieBasedOnName({variables: {name: keyword}});
-        let mounted = true; 
-        const data = async () => {     
-            
-            await axios(`https://api.themoviedb.org/3/search/movie?query=${keyword}&api_key=cfe422613b250f702980a3bbf9e90716`)
-            .then(result => {
-                if(mounted){
-                    senditemState(result.data);
-                    console.log("senditem");
-                    console.log(senditem);
-                }
-                else{
-                    console.log('mounted');
-                }
-            }).catch(err => {
-                console.log(err);
-            })
+        let mount = true; 
+        if(mount){
+            window.addEventListener("resize", updateMedia);
+            getMovieBasedOnName({variables: {name: keyword}});
+            console.log(data);
         }
-        data();
-       
-
+        return () => mount = false; 
         
-       
-
     }, [keyword, isDesktop])
 
 
@@ -90,9 +69,7 @@ const InputSearch = () => {
 
     return(
         <React.Fragment>
-            {console.log("returning")}
-            {console.log(senditem)}
-            {console.log(isDesktop)}
+            {console.log(data)}
             <div onClick={() => {
                     
                     movieInputState({
@@ -101,12 +78,8 @@ const InputSearch = () => {
                 }
                 className="input-container" >
 
-                
-                
                 <form>
-
                     <input  
-
                             className="input-search" 
                             type="text"    
                             name="inputsearch"
@@ -116,13 +89,13 @@ const InputSearch = () => {
                                 event.stopPropagation();
                                 
                                 if(isDesktop < 700){
-                                    console.log("did update")
+                                   
                                     movieInputState({
                                         width: '50%'
                                     })
                                 }
                                 else{
-                                    console.log("did update1")
+                                   
                                     movieInputState({
                                         width: '20%'
                                     })
@@ -134,9 +107,6 @@ const InputSearch = () => {
                             onMouseUp= {() => movieInputState({
                                 width: '10%'
                             })}
-
-
-                            
                     />
 
                     <button className="input-submit"
@@ -146,26 +116,28 @@ const InputSearch = () => {
                 </form>
 
                 
-                 <div className="movieList" onClick={() => {
+                <div className="movieList" onClick={() => {
                                     movieInputState({
                                     width: '10%'
                                 })}
                             }>
 
                     {
-                        senditem != null ? (
-                            senditem.results.map((item, index) => ( 
+                        data ? (
+                            data.movieItem.map((item, index) => ( 
                                 <div className="movieItem">
-                                        
-                                    
-                                        
+                                        <Link  
+                                            
+                                            to={{
+                                                pathname: `/popularmovie/${item.id}`,
+                                                
+                                            }}>
+
                                         <img 
                                                 className="imgItem"
                                                 alt="example" 
                                                 src={`https://image.tmdb.org/t/p/w300${item.poster_path}`} />
                                                 
-                                       
-
                                         <div className="movieItem-start">
                                             <StarFilled className="starfilled"/>
                                             {item.vote_average}
@@ -175,18 +147,18 @@ const InputSearch = () => {
                                             <ClockCircleFilled/>
                                             <p>{item.runtime}</p>
                                         </div>
-                                   
-                                       
-                                
+                                        </Link>
                                 </div>
+
                             )
                             )
                         ) : (
                             <h1>hihi</h1>
                         )
-                    }
+                    } 
                 </div> 
             </div>
+           
         </React.Fragment>
     )
 }

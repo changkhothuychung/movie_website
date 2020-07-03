@@ -50,5 +50,16 @@ body {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
   }
+
+
+@media screen and (max-width: 600px){
+  .navbar ul li{
+    display:inline-block;
+    margin: 1em;
+    font-size: 10px;
+    color: rgb(124, 165, 121);
+}
+  
+} 
   
 

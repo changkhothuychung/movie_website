@@ -143,7 +143,9 @@ class App extends React.Component{
                         <MovieItem onClick={() => this.onClickButton()}  addMovie={this.props.add}/>
                     </Route>   
                     <Route  path="/search" >
+                     
                         <InputSearch onClick={() => this.onClickButton()}/>
+                      
                     </Route>
                     <Route  path="/favor" >
                         <Favor onClick={() => this.onClickButton()} work={this.props.listWork}/>

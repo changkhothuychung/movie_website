@@ -16,12 +16,17 @@ import { ApolloLink } from 'apollo-link';
       if (networkError) console.log(`[Network error]: ${networkError}`);
     }),
     new HttpLink({
-      uri: 'https://movieapi1810.herokuapp.com/graphql',
+      uri: 'http://localhost:9000/graphql',
       credentials: 'same-origin'
     })
   ]),
   cache: new InMemoryCache()
 });
 
-export default client
+export default client;
+
+
+
+
+
 

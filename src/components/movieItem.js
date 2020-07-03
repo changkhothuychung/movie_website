@@ -3,7 +3,7 @@ import { Card } from 'antd';
 import {useQuery} from '@apollo/react-hooks';
 import { Button } from 'antd';
 import {useParams} from 'react-router-dom';
-import {getMovieById,getAllMovie} from '../schema/schema';
+import {getMovieById,getAllMovie, getMovieSearchName} from '../schema/schema';
 import { Spin } from 'antd';
 import './movieItem.css';
 import './movieItemCondition.css';
@@ -56,6 +56,7 @@ const MovieItem = (props) => {
         variables: {id}
     })
 
+   
     const convertToHours = (time) => {
         let hours = Math.floor(time/60);
         let min = time - hours*60;
@@ -63,7 +64,9 @@ const MovieItem = (props) => {
         return result; 
     }
 
-    const {data2, loading2, error2} = useQuery(getAllMovie);
+    const {data2, loading2, error2} = useQuery(getMovieSearchName, {
+        variables: {id},
+    });
     
 
     useEffect( () => {
@@ -134,6 +137,8 @@ const MovieItem = (props) => {
     const MovieItemConditionally = () => {
         return(
             <React.Fragment>
+               
+
                 <div style={backgroundImg} className="container-condition">
                     <div>
                         <Link to="/popularmovie">   
@@ -223,7 +228,8 @@ const MovieItem = (props) => {
 
     return(
         <React.Fragment  >
-            {}
+                {console.log("data2")}
+                {console.log(data2)}
                 {!senditem.movies  ?  (
                     <h1>hihih</h1>
                 ) : ( 
