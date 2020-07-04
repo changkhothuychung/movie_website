@@ -16,7 +16,7 @@ import { ApolloLink } from 'apollo-link';
       if (networkError) console.log(`[Network error]: ${networkError}`);
     }),
     new HttpLink({
-      uri: 'http://localhost:9000/graphql',
+      uri: 'https://movieapi1810.herokuapp.com/graphql',
       credentials: 'same-origin'
     })
   ]),

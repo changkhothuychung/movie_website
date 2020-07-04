@@ -8,9 +8,9 @@ import { Spin } from 'antd';
 import './movieItem.css';
 import './movieItemCondition.css';
 import axios from 'axios';
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 import {LeftOutlined, ClockCircleFilled,StarFilled} from '@ant-design/icons';
-
+import BackButton from './backButton';
 const { Meta } = Card;
 
 
@@ -243,8 +243,8 @@ const MovieItem = (props) => {
 
                     
                         <div>
-                            
-                        <button onClick={() => history.goBack()}  className="button-back">Back</button>
+
+                            <BackButton />
                         
                         </div>
 
@@ -377,4 +377,4 @@ const MovieItem = (props) => {
 }
 
 
-export default MovieItem; 
+export default withRouter(MovieItem); 
