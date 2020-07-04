@@ -113,7 +113,7 @@ const InputSearch = () => {
 
                     <button className="input-submit"
                            onClick={() => keywordState(document.querySelector('.input-search').value)} 
-                           type="submit" ><SearchOutlined /> </button>
+                           type="button" ><SearchOutlined /> </button>
 
                 </form>
 
