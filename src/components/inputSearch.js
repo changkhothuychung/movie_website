@@ -78,7 +78,7 @@ const InputSearch = () => {
                 }
                 className="input-container" >
 
-                <form>
+                <form id="submitform">
                     <input  
                             className="input-search" 
                             type="text"    
@@ -108,6 +108,8 @@ const InputSearch = () => {
                                 width: '10%'
                             })}
                     />
+
+                    <input style={{display:'none'}} className="input-submit" onClick={() => keywordState(document.querySelector('.input-search').value)} type="submit" />
 
                     <button className="input-submit"
                            onClick={() => keywordState(document.querySelector('.input-search').value)} 
