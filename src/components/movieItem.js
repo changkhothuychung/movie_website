@@ -146,7 +146,7 @@ const MovieItem = (props) => {
                 <div style={backgroundImg} className="container-condition">
                     <div>
                         <Link to="/popularmovie">   
-                            <button className="button-condition"><LeftOutlined /></button>
+                            <button onClick={history.goBack} className="button-condition"><LeftOutlined /></button>
                         </Link>
                     </div>
                     <div className="item-container-condition">
