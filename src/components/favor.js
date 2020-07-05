@@ -17,7 +17,7 @@ export const Favor = (props) => {
 
         <div className="movieContainer">
                 
-                <div className="movieList">
+                <div className="movieList-favor">
                 {
                     props.work.map((item) => (
 
