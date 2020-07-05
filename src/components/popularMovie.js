@@ -21,6 +21,13 @@ const PopularMovie = (props) => {
         height: '360px',
     })
     const [flag, flagState] = useState(false);
+
+    const convertToHours = (time) => {
+        let hours = Math.floor(time/60);
+        let min = time - hours*60;
+        let result = hours.toString() + "h" + " " + min.toString() + "m"; 
+        return result; 
+    }
     
     const handleOnClick = (item) => {
         return <Link  to={{
@@ -29,6 +36,8 @@ const PopularMovie = (props) => {
         }}>
         </Link>
     }
+
+
 
     if(loading){
         return(
@@ -56,10 +65,12 @@ const PopularMovie = (props) => {
     return(
         <React.Fragment>
             <div className="movieContainer">
+                
                 <div className="movieList">
                     {
+                        
                         data.movie.map((item, index) => (
-                                 
+                             
                                <div className="movieItem">
                                         <Link  
                                             
@@ -84,7 +95,7 @@ const PopularMovie = (props) => {
                                         </div>
                                         <div className="movieItem-time">
                                             <ClockCircleFilled/>
-                                            <p>{item.runtime}</p>
+                                            
                                         </div>
                                        
                                         </Link>

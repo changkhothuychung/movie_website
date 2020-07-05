@@ -123,6 +123,7 @@ const InputSearch = () => {
                                     width: '10%'
                                 })}
                             }>
+                    {console.log(data)}
 
                     {
                         keyword != null ? (

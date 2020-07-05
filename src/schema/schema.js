@@ -41,6 +41,7 @@ export const getMovieSearchByName = gql`
             release_date
             poster_path
             backdrop_path
+            vote_average
         }
     }
 `
