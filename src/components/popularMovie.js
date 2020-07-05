@@ -1,15 +1,13 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import { Card , Row, Col} from 'antd';
 import {useQuery} from '@apollo/react-hooks';
 import {getAllMovie} from '../schema/schema';
 import {
-    Link,
-    Redirect
+    Link
 } from "react-router-dom";
 import './popularMovie.css';
-import { prop } from 'ramda';
 import { Spin } from 'antd';
-import {LeftOutlined, ClockCircleFilled,StarFilled} from '@ant-design/icons';
+import {ClockCircleFilled,StarFilled} from '@ant-design/icons';
 
 
 const PopularMovie = (props) => {
@@ -93,10 +91,10 @@ const PopularMovie = (props) => {
                                                     {item.vote_average}
                                                     
                                         </div>
-                                        <div className="movieItem-time">
+                                        {/* <div className="movieItem-time">
                                             <ClockCircleFilled/>
                                             
-                                        </div>
+                                        </div> */}
                                        
                                         </Link>
                                 

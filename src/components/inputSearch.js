@@ -145,10 +145,10 @@ const InputSearch = () => {
                                             {item.vote_average}
                                                     
                                         </div>
-                                        <div className="movieItem-time">
+                                        {/* <div className="movieItem-time">
                                             <ClockCircleFilled/>
                                             <p>{item.runtime}</p>
-                                        </div>
+                                        </div> */}
 
                                     </Link>
                                         

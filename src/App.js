@@ -150,7 +150,7 @@ class App extends React.Component{
                     </Route>
                    
                     <Route  path="/favor" >
-                        <Favor onClick={() => this.onClickButton()} work={this.props.listWork}/>
+                        <Favor onClick={() => this.onClickButton()} deleteMovie={this.props.delete} work={this.props.listWork}/>
                     </Route>
                 </Switch>
               </div>
@@ -186,7 +186,7 @@ const mapStateToProps = createStructuredSelector({
 
 const mapDispatchToProps = dispatch => ({
   add: item => dispatch(appMovieAdd(item)),
-  delete: id => dispatch(appMovieDelete(id)),
+  delete: item => dispatch(appMovieDelete(item)),
 })
 
 export default connect(mapStateToProps,mapDispatchToProps)(App);

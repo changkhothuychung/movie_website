@@ -21,6 +21,14 @@
     margin: auto;
 }
 
+.movieItem-delete{
+    position:absolute;
+    top:0px;
+    right:0px;
+    z-index: 2;
+    border: 1px solid red; 
+}
+
 
 
 
@@ -119,7 +127,7 @@
 
 
 
-@media screen and (min-width: 550px){
+@media screen and (min-width: 650px){
     .movieItem {
        flex: 1 0 13%;
        display:block;
@@ -132,6 +140,49 @@
         width:100%;
         height:100%;
         overflow:hidden;
+    }
+
+    .movieItem-start{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        background-color: rgba(0, 0, 0, 0.808);
+        color: gold;
+        margin: 0.25rem;
+        padding-left: 0.3rem;
+        padding-right: 0.3rem;
+        border-radius: 10%;
+        font-size: 1.1em;
+    }
+} 
+
+
+@media screen and (min-width: 750px){
+    .movieItem {
+       flex: 1 0 13%;
+       display:block;
+    }
+
+    .movieList {
+        -webkit-box-pack: center;
+        display:grid;
+        grid-template-columns: auto auto auto auto auto;
+        width:100%;
+        height:100%;
+        overflow:hidden;
+    }
+
+    .movieItem-start{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        background-color: rgba(0, 0, 0, 0.808);
+        color: gold;
+        margin: 0.25rem;
+        padding-left: 0.3rem;
+        padding-right: 0.3rem;
+        border-radius: 10%;
+        font-size: 1.3em;
     }
 } 
 

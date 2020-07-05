@@ -8,10 +8,10 @@ export const appMovieAdd = (item) => {
     }
 }
 
-export const appMovieDelete = (id) => {
+export const appMovieDelete = (item) => {
 
     return {
         type: MOVIEDELETE, 
-        id
+        item
     }
 }

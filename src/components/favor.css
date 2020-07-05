@@ -1,0 +1,54 @@
+.movieItem-favor{
+    position: relative;
+    display: flex;
+    color: white;
+    flex: 0 0 2%;
+    margin: 1.5vw 1.5vw;
+    border-radius: 10px 10px 0px 0px;
+    margin: auto;
+    
+}
+
+.delete-icon{
+    margin: 0px 0.25rem 0px 0px;
+}
+
+.favor-detail{
+    width:30%;
+    position:absolute; 
+    left:50%;
+    transform:translateX(-50%);
+    color: white;
+    font-size: .6rem;
+    margin: 0.5rem;
+    outline: none;
+    border-radius: 0.8em;
+    background: rgb(39, 105, 180); 
+    text-align:center;
+    align-self:center;
+    
+}
+
+
+p{
+    color: white; 
+    align-self:center;
+    text-align:center;
+    transform:translateY(25%);
+}
+
+.movieItem-detail{
+    display:flex;
+    position: absolute;
+    bottom: 0px;
+    left:50%;
+    transform:translateX(-50%);
+    padding-right: .8em;
+    padding-left: .8em;
+    background-color: rgb(39, 105, 180);
+    color: white; 
+    margin: 0.25rem;
+    border-radius: 10%;
+    display:flex;
+    flex-direction: row;
+}
