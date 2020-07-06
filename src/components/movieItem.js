@@ -201,7 +201,7 @@ const MovieItem = (props) => {
                     </div>
                     <div className="button-option-condition">
                             <button className="button1-condition" ><a href={`https://www.youtube.com/watch?v=${senditem.movies.videos.results[0].key}`} target="_blank" >Watch Trailer</a></button>
-                            <button className="button2-condition" onClick={() => props.addMovie(data.searchById[0])} >Add To List</button>
+                            <button className="button2-condition" onClick={() => props.addMovie(senditem.movies)} >Add To List</button>
                     </div>
                 </div>
             </React.Fragment>
@@ -271,7 +271,7 @@ const MovieItem = (props) => {
                                 <div className="item-left-button">
                                 
                                     <button className="button1" ><a href={`https://www.youtube.com/watch?v=${senditem.movies.videos.results[0].key}`} target="_blank" >Watch Trailer</a></button>
-                                    <button className="button2" onClick={() => props.addMovie(data.searchById[0])} >Add To List</button>
+                                    <button className="button2" onClick={() => props.addMovie(senditem.movies)} >Add To List</button>
             
                                 </div>
             

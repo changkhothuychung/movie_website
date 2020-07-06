@@ -16,6 +16,8 @@ export const Favor = (props) => {
         <React.Fragment>
 
         <div className="movieContainer">
+
+                
                 
                 <div className="movieList-favor">
                 {
