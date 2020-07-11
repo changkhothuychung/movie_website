@@ -123,10 +123,9 @@
 .item-footer-condition{
     width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 1.25rem 0px;
-    align-items:flex-start;
+    flex-direction: column;
+    justify-content: center;
+   
 }
 
 .item-overview-condition{
@@ -136,13 +135,14 @@
     display:flex;
     flex-direction:column;
     justify-content:flex-start;
-    align-items: flex-start;
+    align-self:flex-start;
+    margin-bottom: .7em ;
 }
 
 
 .item-overview-condition div p{
     text-align:center;
-    align-self:flex-end;
+    align-self:flex-start;
 }
 
 .revenue-budget-condition{
@@ -151,12 +151,10 @@
     flex-direction: row; 
     justify-content: space-around;
     font-size: 1rem;
-    margin-left: 2em;
     line-height: 1em;
-    
-    margin: .5em auto;
+    margin-top: .5em ;
     padding: .3em;
-    
+    align-self:flex-end;
 }
 
 .revenue-budget-condition p{
@@ -372,8 +370,8 @@
         color: white;
         font-size: 1.2rem;
         padding: 0.1em;
-        padding-left: .3em;
-        padding-right: .3em;
+        padding-left: .6em;
+        padding-right: .6em;
         outline: none;
         border-radius: 0.5rem;
         text-decoration: none;
@@ -460,6 +458,23 @@
         rgba(44, 57, 73, 0.8) 5%, 
         rgb(44, 57, 73) 7%, 
         rgba(44, 57, 73, 0.99) 10%) 0% 0% ;
+    }
+
+    .button-condition{
+        position: fixed;
+        top:0;
+        left:0;
+        color: white;
+        font-size: 1.2rem;
+        padding: 0.1em;
+        padding-left: .6em;
+        padding-right: .6em;
+        outline: none;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        background: rgb(39, 105, 180);
+        cursor:pointer;
+        transform:translate(-50%, -50%);
     }
 }
 

@@ -220,9 +220,8 @@ const MovieItem = (props) => {
                                     </p>
                                 </div>
                             </div>
-                            
-                        </div>
-                        <div className="revenue-budget-condition">
+
+                            <div className="revenue-budget-condition">
                                  <div>
                                     
                                     <p>Revenue: ${senditem.movies.revenue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
@@ -231,11 +230,17 @@ const MovieItem = (props) => {
                                 <div>
                                     
                                     <p>Budget: ${senditem.movies.budget.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
-                                </div>
+                            </div>
             
                         </div>
 
+                            
+                        </div>
+                        
+                        
+
                     </div>
+                    
                     <div className="button-option-condition">
                             <button className="button1-condition" ><a href={`https://www.youtube.com/watch?v=${senditem.movies.videos.results[0].key}`} target="_blank" >Watch Trailer</a></button>
                             <button className="button2-condition" onClick={() => props.addMovie(senditem.movies)} >Add To List</button>
