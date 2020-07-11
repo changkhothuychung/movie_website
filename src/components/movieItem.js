@@ -104,6 +104,38 @@ const MovieItem = (props) => {
         
         }
 
+        else if(isDesktop < 600){
+
+            data = async () => {
+                console.log("second condition")
+                await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=0aecc06bb4fadb06b5f071fef0c2ce6d&&language=en-US&append_to_response=videos%2Cimages&include_image_language=en%2Cnull&fbclid=IwAR0YGcvMYcFf8ieH8yGGDQZuxZ159CdSyQ_YXMqvPgamKd0jPSjWlZELaEg`
+                ).then(result => {
+                    
+                    console.log("hello world")     
+                
+                    senditemState({movies: result.data});
+                    console.log(senditem);
+                    backgroundImgState({
+                        background: `linear-gradient(rgba(0, 0, 0, 0), 
+                        rgba(0, 0, 0, 0) 20%, 
+                        rgba(44, 57, 73, 0.8) 30%, 
+                        rgb(44, 57, 73) 40%, 
+                        rgba(44, 57, 73, 0.99) 50%) 0% 0% / cover, 
+                        url(https://image.tmdb.org/t/p/w300${result.data.backdrop_path})
+                        top
+                        center
+                        no-repeat`,
+                        backgroundSize: '100% auto'
+                        
+                                        
+                    })
+                }).catch(err => {
+                    console.log(err);
+                })
+            }
+
+        }
+
         else{
              data = async () => {
                 console.log("second condition")
@@ -181,10 +213,16 @@ const MovieItem = (props) => {
                             </div>
                         </div>
                         <div className="item-footer-condition">
-                            <p className="item-overview-condition">
-                                 {senditem.movies.overview}
-                            </p>
-                            <div className="revenue-budget-condition">
+                            <div className="item-overview-condition">
+                                <div>
+                                    <p>
+                                        {senditem.movies.overview}
+                                    </p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div className="revenue-budget-condition">
                                  <div>
                                     
                                     <p>Revenue: ${senditem.movies.revenue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
@@ -195,7 +233,6 @@ const MovieItem = (props) => {
                                     <p>Budget: ${senditem.movies.budget.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
                                 </div>
             
-                            </div>
                         </div>
 
                     </div>
