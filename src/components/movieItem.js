@@ -177,9 +177,9 @@ const MovieItem = (props) => {
                
                 <div style={backgroundImg} className="container-condition">
                     <div>
-                        <Link to="/popularmovie">   
-                            <button onClick={history.goBack} className="button-condition"><LeftOutlined /></button>
-                        </Link>
+                           
+                        <button onClick={history.goBack} className="button-condition"><LeftOutlined /></button>
+                       
                     </div>
                     <div className="item-container-condition">
                         <h1 className="item-title-condition">{senditem.movies.title}</h1>
@@ -286,7 +286,7 @@ const MovieItem = (props) => {
                     
                         <div>
 
-                            <BackButton />
+                            <button onClick={history.goBack}  className="button-back">Back</button>
                         
                         </div>
 
