@@ -13,7 +13,9 @@ const { Meta } = Card;
 const { Search } = Input;
 
 const InputSearch = () => {
-    let [getMovieBasedOnName, {data, loading, error}] = useLazyQuery(getMovieSearchByName);
+    let [getMovieBasedOnName, {data, loading, error}] = useLazyQuery(getMovieSearchByName, {
+        fetchPolicy: "no-cache"
+    });
     const [keyword, keywordState] = useState(null);
     
     let [movieInput, movieInputState] = useState({
@@ -70,7 +72,9 @@ const InputSearch = () => {
 
     return(
         <React.Fragment>
-            {console.log(data)}
+           
+            
+
             <div onClick={() => {
                     
                     movieInputState({
@@ -85,6 +89,15 @@ const InputSearch = () => {
                             type="text"    
                             name="inputsearch"
                             placeholder="...Search"
+                            autoComplete="off"
+                            onKeyDown={(event) => {
+                                console.log(event.keyCode)
+                                if(event.keyCode == '13'){
+                                    console.log(event.keyCode);
+                                    console.log('go');
+                                    keywordState(document.querySelector('.input-search').value)
+                                }
+                            }}
                             style={ isDesktop < 700 ? {width: '25%'} : movieInput}
                             onClick={(event) => {
                                 event.stopPropagation();
@@ -93,26 +106,19 @@ const InputSearch = () => {
                                 }
                             }
 
-                           
                     />
 
-                    <input style={{display:'none'}} className="input-submit" onClick={() => keywordState(document.querySelector('.input-search').value)} type="submit" />
+                    
 
                     <button className="input-submit"
                            onClick={() => keywordState(document.querySelector('.input-search').value)} 
-                           style={{display:'none'}}
-                           type="submit" > <SearchOutlined /> </button> 
-
-                    <button className="input-submit"
-                           onClick={() => keywordState(document.querySelector('.input-search').value)} 
-                           
-                           type="button" > <SearchOutlined /> </button> 
+                            > <SearchOutlined /> </button> 
 
                 </form>
 
                 
                 <div className="movieList" >
-                    {console.log(data)}
+                   
 
                     {
                         keyword != null ? (
