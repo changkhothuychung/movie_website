@@ -66,7 +66,7 @@
 .loading-mode{
     text-align: center;
     font-size: 30px;
-    color: white;
+    color: rgb(124, 165, 121);
     border-radius: 4px;
     margin-bottom: 20px;
     padding: 30px 50px;
@@ -74,7 +74,7 @@
 }
 
 .loading-mode h1{
-    color: white; 
+    color: rgb(124, 165, 121);
 }
 
 .spin{

@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import './popularMovie.css';
 import { Spin } from 'antd';
+import { LoadingOutlined } from '@ant-design/icons';
 import {ClockCircleFilled,StarFilled} from '@ant-design/icons';
 
 
@@ -41,7 +42,7 @@ const PopularMovie = (props) => {
         return(
         <React.Fragment>
             <div className="loading-mode">
-                <Spin className="spin" size="large" />
+                <LoadingOutlined className="spin" size="large" />
                 <h1>Loading</h1>
             </div>
         </React.Fragment>

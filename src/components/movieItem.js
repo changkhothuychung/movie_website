@@ -11,6 +11,7 @@ import axios from 'axios';
 import {Link, withRouter} from 'react-router-dom'
 import {LeftOutlined, ClockCircleFilled,StarFilled} from '@ant-design/icons';
 import BackButton from './backButton';
+import { LoadingOutlined } from '@ant-design/icons';
 const { Meta } = Card;
 
 
@@ -176,10 +177,8 @@ const MovieItem = (props) => {
             <React.Fragment>
                
                 <div style={backgroundImg} className="container-condition">
-                    <div>
-                           
+                    <div>   
                         <button onClick={history.goBack} className="button-condition"><LeftOutlined /></button>
-                       
                     </div>
                     <div className="item-container-condition">
                         <h1 className="item-title-condition">{senditem.movies.title}</h1>
@@ -256,7 +255,7 @@ const MovieItem = (props) => {
         return(
             <React.Fragment>
                 <div className="loading-mode">
-                    <Spin className="spin" size="large" />
+                    <LoadingOutlined className="spin" size="large" />
                     <h1>Loading</h1>
                 </div>
             </React.Fragment>
@@ -354,13 +353,14 @@ const MovieItem = (props) => {
                                     </div>
                                 </div>
             
-                                <div className="item-middle-time-start">
-            
-                                </div>
-            
+                                
                                 <div className="item-middle-overview">
+                                    
                                     <h2>Overview</h2>
-                                    <p>{senditem.movies.overview}</p>
+                                    
+                                    <div>
+                                        {senditem.movies.overview}
+                                    </div>
                                 </div>
             
                                 <div className="item-middle-addinfo">

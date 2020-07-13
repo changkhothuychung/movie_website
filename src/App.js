@@ -10,6 +10,7 @@ import {listWorkReselect} from './reselect/reselect';
 import client from './apollo/client';
 import MovieItem from './components/movieItem';
 import NavBar from './components/navbar';
+import { ConnectedRouter } from 'connected-react-router';
 import {
   BrowserRouter as Router,
   Switch,
@@ -58,7 +59,7 @@ class App extends React.Component{
           <ApolloProvider client={client}>
            
            
-            <Router className="root">
+          <Router className="root">
               <div>
                
                 {console.log(this.state.pathlink + " pathlink")}

@@ -8,6 +8,7 @@ import './popularMovie.css';
 import axios from 'axios'
 import {Link} from 'react-router-dom';
 import {Spin} from 'antd';
+import { LoadingOutlined } from '@ant-design/icons';
 const { Meta } = Card;
 const { Search } = Input;
 
@@ -45,7 +46,7 @@ const InputSearch = () => {
         return(
         <React.Fragment>
              <div className="loading-mode">
-                <Spin className="spin" size="large" />
+                <LoadingOutlined className="spin" size="large"/>
                 <h1>Loading</h1>
             </div>
         </React.Fragment>
@@ -88,25 +89,11 @@ const InputSearch = () => {
                             onClick={(event) => {
                                 event.stopPropagation();
                                 
-                                if(isDesktop < 700){
-                                   
-                                    movieInputState({
-                                        width: '50%'
-                                    })
-                                }
-                                else{
-                                   
-                                    movieInputState({
-                                        width: '20%'
-                                    })
-                                }
-                                   
+                                
                                 }
                             }
 
-                            onMouseUp= {() => movieInputState({
-                                width: '10%'
-                            })}
+                           
                     />
 
                     <input style={{display:'none'}} className="input-submit" onClick={() => keywordState(document.querySelector('.input-search').value)} type="submit" />
@@ -124,11 +111,7 @@ const InputSearch = () => {
                 </form>
 
                 
-                <div className="movieList" onClick={() => {
-                                    movieInputState({
-                                    width: '10%'
-                                })}
-                            }>
+                <div className="movieList" >
                     {console.log(data)}
 
                     {

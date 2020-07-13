@@ -17,11 +17,13 @@
     "apollo-link-error": "^1.1.13",
     "apollo-link-http": "^1.5.17",
     "axios": "^0.19.2",
+    "connected-react-router": "^6.8.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-favicon": "^2.0.1",
     "graphql": "^15.0.0",
     "graphql-tag": "^2.10.3",
+    "history": "^5.0.0",
     "ramda": "^0.27.0",
     "react": "^16.13.1",
     "react-apollo": "^3.1.5",
@@ -33,7 +35,7 @@
     "reselect": "^4.0.0"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "react-scripts start",
     "dev": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
