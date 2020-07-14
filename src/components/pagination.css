@@ -1,0 +1,16 @@
+.paginate-list{
+    list-style-type:none;
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+}
+
+.paginate-item{
+    width:2em;
+    height:2em;
+    background-color: rgb(124, 165, 121);
+    margin: .5em;
+    text-align:center;
+    cursor:pointer;
+   
+}

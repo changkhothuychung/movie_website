@@ -9,7 +9,8 @@ import './popularMovie.css';
 import { Spin } from 'antd';
 import { LoadingOutlined } from '@ant-design/icons';
 import {ClockCircleFilled,StarFilled} from '@ant-design/icons';
-
+import MovieDisplay from './movieDisplay';
+import SelfMadePagination from './pagination'; 
 
 const PopularMovie = (props) => {
 
@@ -36,6 +37,9 @@ const PopularMovie = (props) => {
         </Link>
     }
 
+    const [currentPage, setCurrentPage] = useState(1); 
+    const [postsPerPage, setPostsPerPage] = useState(20);
+
 
 
     if(loading){
@@ -58,56 +62,21 @@ const PopularMovie = (props) => {
 
 
 
+    const indexOfLastPost = currentPage*postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const currentPosts = data.movie.slice(indexOfFirstPost,indexOfLastPost);
 
-
+    const paginate = (number) => setCurrentPage(number)
    
     return(
         <React.Fragment>
-            <div className="movieContainer">
-                
-                <div className="movieList">
-                    {
-                        
-                        data.movie.map((item, index) => (
-                             
-                               <div className="movieItem">
-                                        <Link  
-                                            
-                                            to={{
-                                                pathname: `/popularmovie/${item.id}`,
-                                                
-                                            }}>
 
-                                        
-                                        
-                                        <img 
-                                                className="imgItem"
-                                                alt="example" 
-                                                src={`https://image.tmdb.org/t/p/w300${item.poster_path}`} />
-                                                
-                                       
+            <MovieDisplay data={currentPosts} />
 
-                                        <div className="movieItem-start">
-                                                    <StarFilled className="starfilled"/>
-                                                    {item.vote_average}
-                                                    
-                                        </div>
-                                        {/* <div className="movieItem-time">
-                                            <ClockCircleFilled/>
-                                            
-                                        </div> */}
-                                       
-                                        </Link>
-                                
-                                </div>
-                                    
-                                
-                            )  
-                        )  
-                    }
-                </div>
-
-            </div>
+            <SelfMadePagination
+             postsPerPage={postsPerPage}
+              totalPosts={data.movie.length}
+             paginate={paginate}/>
             
         </React.Fragment>
     )
