@@ -67,25 +67,27 @@ class Filter extends React.Component{
                              className="filter-item-container">
 
 
-                         <div className="filter-list">
+                         <div 
+                         onClick={() => {
+                            if(this.state.filterState.visibility === 'visible'){
+                              this.setState({
+                                filterState: {
+                                  visibility: 'hidden',
+                                }
+                              })
+                            }
+                            else if(this.state.filterState.visibility === 'hidden'){
+                              this.setState({
+                                filterState:{
+                                  visibility: 'visibility',
+                                 
+                                }
+                              })
+                            }
+                          }}
+                         className="filter-list">
                           
-                             <p  onClick={() => {
-                               if(this.state.filterState.visibility === 'visible'){
-                                 this.setState({
-                                   filterState: {
-                                     visibility: 'hidden',
-                                   }
-                                 })
-                               }
-                               else if(this.state.filterState.visibility === 'hidden'){
-                                 this.setState({
-                                   filterState:{
-                                     visibility: 'visibility',
-                                     transitionDuration: '1s',
-                                   }
-                                 })
-                               }
-                             }}>Sortby</p>
+                             <p  >Sortby</p>
                            
 
 
@@ -122,25 +124,27 @@ class Filter extends React.Component{
                             }
                           })} 
                          className="filter-item-container">
-                         <div className="filter-list">
+                         <div 
+                         onClick={() => {
+                            if(this.state.categoryState.visibility === 'visible'){
+                              this.setState({
+                                filterState: {
+                                  visibility: 'hidden',
+                                }
+                              })
+                            }
+                            else if(this.state.categoryState.visibility === 'hidden'){
+                              this.setState({
+                                filterState:{
+                                  visibility: 'visibility',
+                                 
+                                }
+                              })
+                            }
+                          }}
+                         className="filter-list">
                           
-                             <p  onClick={() => {
-                               if(this.state.categoryState.visibility === 'visible'){
-                                 this.setState({
-                                   filterState: {
-                                     visibility: 'hidden',
-                                   }
-                                 })
-                               }
-                               else if(this.state.categoryState.visibility === 'hidden'){
-                                 this.setState({
-                                   filterState:{
-                                     visibility: 'visibility',
-                                     transitionDuration: '1s',
-                                   }
-                                 })
-                               }
-                             }}>Category</p>
+                             <p  >Category</p>
                            
 
 
