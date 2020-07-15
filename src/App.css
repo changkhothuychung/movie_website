@@ -3,6 +3,9 @@
 
 .navbar{
     color: rgb(124, 165, 121);
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between; 
 }
 
 .navbar ul{
@@ -23,12 +26,72 @@
    
 }
 
-.navbar div{
+.menu div{
     width:100%;
     height:3px;
     background-color: black; 
     
 }
+
+.filter{
+  cursor:pointer;
+ 
+  display:flex;
+  
+}
+
+
+
+.filter-item-container{
+  height:100%;
+  width:100%;
+  margin:auto;
+ 
+}
+
+.filter-list{
+  height:100%;
+  width:100%;
+  position:relative; 
+  
+}
+.filter-list p{
+  
+}
+
+.filter-item{
+  width:130%;
+  height:130%;
+  position:absolute; 
+  top:0;
+  left:0;
+  transform:translateY(50%);
+  background:black; 
+  border-radius: 5px;
+  z-index:2;
+  overflow-wrap: break-word;
+  overflow:auto;
+ 
+}
+.filter-item-wrapper{
+  height:100%;
+  width:100%;
+  position:relative; 
+  display:flex;
+  flex-direction:column;
+  justify-content:space-around;
+  margin: auto;
+  align-items:center;
+  text-align:center;
+}
+
+.filter-item p{
+  margin-right: .2em;
+  margin-left: .2em;
+  overflow-wrap: break-word;
+  font-size: 15px;
+}
+
 
 body {
     background-color: rgb(44, 57, 73);

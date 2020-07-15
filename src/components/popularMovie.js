@@ -71,11 +71,11 @@ const PopularMovie = (props) => {
     return(
         <React.Fragment>
 
-            <MovieDisplay data={currentPosts} />
+            <MovieDisplay type={props.type} data={currentPosts} />
 
             <SelfMadePagination
              postsPerPage={postsPerPage}
-              totalPosts={data.movie.length}
+             totalPosts={data.movie.length}
              paginate={paginate}/>
             
         </React.Fragment>

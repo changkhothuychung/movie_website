@@ -21,6 +21,8 @@
     margin: auto;
 }
 
+
+
 .movieItem-delete{
     position:absolute;
     top:0px;
@@ -76,6 +78,8 @@
 .loading-mode h1{
     color: rgb(124, 165, 121);
 }
+
+
 
 .spin{
     font-size: 30px;

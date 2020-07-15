@@ -13,7 +13,7 @@ const SelfMadePagination = ({postsPerPage, totalPosts, paginate}) => {
             <nav>
                 <ul className="paginate-list">
                     {PageNumbers.map( (number) => (
-                        <li onClick={() => paginate(number)} key={number} className="paginate-item">
+                        <li  onClick={() => paginate(number)} key={number} className="paginate-item">
                             <p>{number}</p>
                         </li>
                     ))}

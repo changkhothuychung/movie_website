@@ -11,6 +11,7 @@ import client from './apollo/client';
 import MovieItem from './components/movieItem';
 import NavBar from './components/navbar';
 import { ConnectedRouter } from 'connected-react-router';
+import Filter from './components/filter';
 import {
   BrowserRouter as Router,
   Switch,
@@ -31,11 +32,15 @@ class App extends React.Component{
   constructor(props){
       super(props);
       this.state = {
+        sortBy: '',
         isNavBarHidden: false, 
         pathlink: window.location.pathname,
         popularState: {
           background: 'rgb(124, 165, 121)',
         },
+        filterState:{
+           visibility: 'hidden'
+         },
         searchState: {}, 
         favorState: {},
 
@@ -47,6 +52,25 @@ class App extends React.Component{
     })
   }
 
+
+  changeProps=()=>{
+    this.setState({
+      sortBy:'rating',
+    })
+  }
+
+  changeNavBarSearch= ()=>{
+    this.setState({
+      isNavBarHidden: true, 
+    })
+  }
+
+
+changeNavBarMovie=()=>{
+  this.setState({
+    isNavBarHidden: false, 
+  })
+}
   
 
   
@@ -63,70 +87,19 @@ class App extends React.Component{
               <div>
                
                 {console.log(this.state.pathlink + " pathlink")}
-                { this.state.pathlink === '/popularmovie/:id' ? null : (
+               
 
                   <nav className="navbar">
-                  <ul>
-                    <li  onClick={() => {
-                      this.setState({
-                        popularState:{
-                          background: 'rgb(124, 165, 121)'
-                        }, 
-                        searchState: {
-                          background: 'black', 
-                        },
-                        favorState:{
-                          background: 'black',
-                        }
-                      })
-                    }}>
-                      <Link to="/popularmovie">
-                        <p>Popular Movies</p>
-                        <div style={this.state.popularState}></div>
-                      </Link>
-                    </li>
-
-                    <li onClick={() => {
-                          this.setState({
-                            popularState:{
-                              background: 'black'
-                            }, 
-                            searchState: {
-                              background: 'rgb(124, 165, 121)', 
-                            },
-                            favorState:{
-                              background: 'black',
-                            }
-                          })
-                    }}>
-                      <Link to="/search">
-                        <p>Search</p>
-                        <div style={this.state.searchState}></div>
-                      </Link>
-                    </li>
-
-
-                    <li onClick={() => {
-                          this.setState({
-                            popularState:{
-                              background: 'black'
-                            }, 
-                            searchState: {
-                              background: 'black', 
-                            },
-                            favorState:{
-                              background: 'rgb(124, 165, 121)',
-                            }
-                          })
-                    }}>
-                      <Link to="/favor">
-                        <p>Favorites</p>
-                        <div style={this.state.favorState}></div>
-                      </Link>
-                    </li>
-                  </ul>
+                    <NavBar changeNavBarSearch={this.changeNavBarSearch.bind(this)} 
+                            changeNavBarMovie={this.changeNavBarMovie.bind(this)}
+                    />
+                    
+                    
+                    {this.state.isNavBarHidden === false ? (
+                      <Filter changeProps={this.changeProps.bind(this)}/>
+                    ) : null}
                   </nav>
-                ) }
+                
 
                 {/* A <Switch> looks through its children <Route>s and
                     renders the first one that matches the current URL. */}
@@ -134,11 +107,11 @@ class App extends React.Component{
 
                    
                     <Route exact path="/popularmovie" >
-                        <PopularMovie onClick={() => this.onClickButton()} />
+                        <PopularMovie type={this.state.sortBy} onClick={() => this.onClickButton()} />
                     </Route>
 
                     <Route exact path="/" >
-                        <PopularMovie onClick={() => this.onClickButton()} />
+                        <PopularMovie type={this.state.sortBy} onClick={() => this.onClickButton()} />
                     </Route>
                     <Route  path="/popularmovie/:id" >
                       
@@ -146,7 +119,7 @@ class App extends React.Component{
                     </Route>   
                     <Route  path="/search" >
                      
-                        <InputSearch onClick={() => this.onClickButton()}/>
+                        <InputSearch />
                       
                     </Route>
                    
