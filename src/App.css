@@ -50,10 +50,9 @@
 }
 
 .filter-list{
-  height:100%;
   width:100%;
   position:relative; 
-  
+   
 }
 .filter-list p{
   
@@ -61,11 +60,25 @@
 
 .filter-item{
   width:130%;
-  height:130%;
   position:absolute; 
-  top:0;
+  bottom:0;
   left:0;
-  transform:translateY(50%);
+  transform:translateY(120%);
+  background:black; 
+  border-radius: 5px;
+  z-index:2;
+  overflow-wrap: break-word;
+  overflow:auto;
+  
+ 
+}
+
+.category-item{
+  position:absolute; 
+  bottom:0;
+  width:50vw;
+  right:0;
+  transform:translateY(130%);
   background:black; 
   border-radius: 5px;
   z-index:2;
@@ -73,6 +86,8 @@
   overflow:auto;
  
 }
+
+
 .filter-item-wrapper{
   height:100%;
   width:100%;
@@ -83,13 +98,34 @@
   margin: auto;
   align-items:center;
   text-align:center;
+  
 }
+
+
+.category-item-wrapper{
+  position:relative; 
+  display:flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  justify-content:flex-start;
+  margin: auto;
+  align-items:center;
+  text-align:center;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;  
+}
+
 
 .filter-item p{
   margin-right: .2em;
   margin-left: .2em;
   overflow-wrap: break-word;
   font-size: 15px;
+}
+
+.category-elem{
+  padding: .5em;
 }
 
 
@@ -115,13 +151,29 @@ body {
   }
 
 
-@media screen and (max-width: 600px){
+
+
+  @media screen and (max-width: 600px){
     .navbar ul li{
         display:inline-block;
         margin: 1em;
         font-size: 15px;  
         color: rgb(124, 165, 121);
     }
+} 
+  
+@media screen and (max-width: 600px){
+    .navbar ul li{
+        display:inline-block;
+        margin: 1em;
+        font-size: 11px;  
+        color: rgb(124, 165, 121);
+    }
+    .menu div{
+      width:100%;
+      height:2px;
+      background-color: black; 
+  }
   
 } 
   

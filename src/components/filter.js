@@ -1,7 +1,21 @@
 import React from 'react'
 
 
-
+const categoryArr = [
+    ['Action', '28'],
+    ['Adventure', '12'],
+    ['Science Fiction', '878'],
+    ['War', '10752'],
+    ['History', '36'],
+    ['Comedy', '35'],
+    ['Mystery', '9648'],
+    ['Family', '10751'],
+    ['History', '36'],
+    ['Crime', '80'],
+    ['Thriller', '53'],
+  
+    
+];
 
 class Filter extends React.Component{
 
@@ -16,7 +30,11 @@ class Filter extends React.Component{
           },
           filterState:{
              visibility: 'hidden'
-           },
+            },
+
+            categoryState:{
+                visibility: 'hidden',
+            },
           searchState: {}, 
           favorState: {},
   
@@ -35,7 +53,8 @@ class Filter extends React.Component{
                              //style={this.state.filterState}
                              onMouseEnter={() => this.setState({
                                filterState:{
-                                 visibility:'visible'
+                                 visibility:'visible',
+                                 transitionDuration: '1s',
                                }
                              })} 
 
@@ -46,6 +65,8 @@ class Filter extends React.Component{
                                }
                              })} 
                              className="filter-item-container">
+
+
                          <div className="filter-list">
                           
                              <p  onClick={() => {
@@ -60,6 +81,7 @@ class Filter extends React.Component{
                                  this.setState({
                                    filterState:{
                                      visibility: 'visibility',
+                                     transitionDuration: '1s',
                                    }
                                  })
                                }
@@ -83,9 +105,65 @@ class Filter extends React.Component{
                          </div>
                      </li>
 
-                     <li className="filter-item-container">
-                         <p>Category</p>
-                         <div></div>
+                     {/* category */}
+
+                     <li 
+                         onMouseEnter={() => this.setState({
+                            categoryState:{
+                              visibility:'visible',
+                             
+                            }
+                          })} 
+
+                          
+                          onMouseLeave={() => this.setState({
+                            categoryState:{
+                              visibility:'hidden'
+                            }
+                          })} 
+                         className="filter-item-container">
+                         <div className="filter-list">
+                          
+                             <p  onClick={() => {
+                               if(this.state.categoryState.visibility === 'visible'){
+                                 this.setState({
+                                   filterState: {
+                                     visibility: 'hidden',
+                                   }
+                                 })
+                               }
+                               else if(this.state.categoryState.visibility === 'hidden'){
+                                 this.setState({
+                                   filterState:{
+                                     visibility: 'visibility',
+                                     transitionDuration: '1s',
+                                   }
+                                 })
+                               }
+                             }}>Category</p>
+                           
+
+
+                           
+                         
+                             <div style={this.state.categoryState} 
+                             className="category-item">
+                               <div className="category-item-wrapper">
+
+                                   {categoryArr.map((item) => (
+                                       <>
+                                            <div onClick={() => this.props.getCategory(item)} className="category-elem">
+                                                {item[0]}
+                                            </div>
+                                       </>
+                                   ))}
+                                 
+                             
+                               </div>
+                               
+                             </div>
+                           
+                         </div>
                      </li>
                  
                </ul>

@@ -43,6 +43,7 @@ class App extends React.Component{
          },
         searchState: {}, 
         favorState: {},
+        category: [],
 
       }
   }
@@ -71,6 +72,14 @@ changeNavBarMovie=()=>{
     isNavBarHidden: false, 
   })
 }
+
+getCategory = (name) => {
+  this.setState({
+    category: name, 
+  })
+  console.log('hi');
+  console.log(name)
+}
   
 
   
@@ -96,7 +105,9 @@ changeNavBarMovie=()=>{
                     
                     
                     {this.state.isNavBarHidden === false ? (
-                      <Filter changeProps={this.changeProps.bind(this)}/>
+                      <Filter 
+                      getCategory={this.getCategory.bind(this)}
+                      changeProps={this.changeProps.bind(this)}/>
                     ) : null}
                   </nav>
                 
@@ -107,11 +118,11 @@ changeNavBarMovie=()=>{
 
                    
                     <Route exact path="/popularmovie" >
-                        <PopularMovie type={this.state.sortBy} onClick={() => this.onClickButton()} />
+                        <PopularMovie category={this.state.category} type={this.state.sortBy} onClick={() => this.onClickButton()} />
                     </Route>
 
                     <Route exact path="/" >
-                        <PopularMovie type={this.state.sortBy} onClick={() => this.onClickButton()} />
+                        <PopularMovie category={this.state.category} type={this.state.sortBy} onClick={() => this.onClickButton()} />
                     </Route>
                     <Route  path="/popularmovie/:id" >
                       

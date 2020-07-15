@@ -59,14 +59,23 @@ const PopularMovie = (props) => {
             </React.Fragment>
         )
     }
+    let tmpMovie = data.movie; 
+    console.log("category here"); 
+    console.log(props.category[1]);
+    if(props.category.length > 0){
+        tmpMovie = data.movie; 
+        tmpMovie = data.movie.filter((item) => item.genre_ids.includes(props.category[1]) === true);
+    }
 
-
+    
 
     const indexOfLastPost = currentPage*postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
-    const currentPosts = data.movie.slice(indexOfFirstPost,indexOfLastPost);
+    const currentPosts = tmpMovie.slice(indexOfFirstPost,indexOfLastPost);
 
     const paginate = (number) => setCurrentPage(number)
+
+    
    
     return(
         <React.Fragment>
@@ -75,7 +84,7 @@ const PopularMovie = (props) => {
 
             <SelfMadePagination
              postsPerPage={postsPerPage}
-             totalPosts={data.movie.length}
+             totalPosts={tmpMovie.length}
              paginate={paginate}/>
             
         </React.Fragment>

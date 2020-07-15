@@ -12,6 +12,7 @@ export const getAllMovie = gql`
             poster_path
             backdrop_path
             vote_average
+            genre_ids
         }
     }
 `;
