@@ -8,24 +8,17 @@
     justify-content: space-between; 
 }
 
-.menu{
+.navbar ul{
     list-style-type: none;
     color: rgb(124, 165, 121);
-   
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items:center;
-    
-}
-
-.menu li{
-  
 }
 
 .navbar ul li{
+    display:inline-block;
+    margin: 1em;
     font-size: 18px;
     color: rgb(124, 165, 121);
+    
 }
 
 .navbar p{
@@ -43,8 +36,7 @@
 .filter{
   cursor:pointer;
   display:flex;
-  
-  
+
 }
 
 
