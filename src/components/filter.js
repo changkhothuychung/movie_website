@@ -55,7 +55,7 @@ class Filter extends React.Component{
                              onMouseEnter={() => this.setState({
                                filterState:{
                                  visibility:'visible',
-                                 transitionDuration: '1s',
+                                 
                                }
                              })} 
 
@@ -80,7 +80,7 @@ class Filter extends React.Component{
                             else if(this.state.filterState.visibility === 'hidden'){
                               this.setState({
                                 filterState:{
-                                  visibility: 'visibility',
+                                  visibility: 'visible',
                                  
                                 }
                               })
@@ -137,7 +137,7 @@ class Filter extends React.Component{
                             else if(this.state.categoryState.visibility === 'hidden'){
                               this.setState({
                                 categoryState:{
-                                  visibility: 'visibility',
+                                  visibility: 'visible',
                                  
                                 }
                               })
