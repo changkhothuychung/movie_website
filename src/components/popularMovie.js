@@ -63,8 +63,13 @@ const PopularMovie = (props) => {
     console.log("category here"); 
     console.log(props.category[1]);
     if(props.category.length > 0){
-        tmpMovie = data.movie; 
-        tmpMovie = data.movie.filter((item) => item.genre_ids.includes(props.category[1]) === true);
+        if(props.category[1] == '-1'){
+            tmpMovie = data.movie; 
+        }
+        else{
+            tmpMovie = data.movie; 
+            tmpMovie = data.movie.filter((item) => item.genre_ids.includes(props.category[1]) === true);
+        }
     }
 
     

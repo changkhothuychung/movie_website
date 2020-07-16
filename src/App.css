@@ -39,25 +39,23 @@
 
 }
 
-
-
 .filter-item-container{
   height:100%;
   width:100%;
   margin:auto;
- 
 }
 
 .filter-list{
   width:100%;
   position:relative; 
-   
-}
-.filter-list p{
   
+  padding-right: .3em;
+  padding-left: .3em;
 }
 
+
 .filter-item{
+  
   width:130%;
   position:absolute; 
   bottom:0;
@@ -95,7 +93,10 @@
   margin: auto;
   align-items:center;
   text-align:center;
-  
+  padding-top:.3em;
+  padding-bottom:.3em;
+  padding-right: .2em;
+  padding-left: .2em;
 }
 
 
@@ -111,6 +112,7 @@
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: 0;  
+  padding: .3em;
 }
 
 

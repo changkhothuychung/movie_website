@@ -13,6 +13,7 @@ const categoryArr = [
     ['History', '36'],
     ['Crime', '80'],
     ['Thriller', '53'],
+    ['All', '-1'],
   
     
 ];
@@ -128,14 +129,14 @@ class Filter extends React.Component{
                          onClick={() => {
                             if(this.state.categoryState.visibility === 'visible'){
                               this.setState({
-                                filterState: {
+                                categoryState: {
                                   visibility: 'hidden',
                                 }
                               })
                             }
                             else if(this.state.categoryState.visibility === 'hidden'){
                               this.setState({
-                                filterState:{
+                                categoryState:{
                                   visibility: 'visibility',
                                  
                                 }
