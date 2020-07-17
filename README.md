@@ -1,4 +1,4 @@
-This project is available at [https://moviecard1810.herokuapp.com/popularmovie](here)
+This project is available at [https://moviecard1810.herokuapp.com/popularmovie](https://moviecard1810.herokuapp.com/popularmovie)
 
 ## Available Scripts
 
