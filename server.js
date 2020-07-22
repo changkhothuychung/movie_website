@@ -18,7 +18,7 @@ app.get('/ping', function (req, res) {
 app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
-app.listen(port, (req,res) => {
+app.listen(process.env.PORT || 3000, (req,res) => {
   console.log(
     `server is running at ${port}`
   )
